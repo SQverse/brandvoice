@@ -337,8 +337,8 @@ p{max-width:62ch}
 </head>
 <body>
 
-<!-- Audio Latar Belakang -->
-<audio id="bg-audio" loop>
+<!-- Audio Latar Belakang - Atribut autoplay ditambahkan di sini -->
+<audio id="bg-audio" autoplay loop preload="auto">
   <source src="assets/us/Saatnya Brand-Mu Bersuara (1).mp3.mpeg" type="audio/mpeg">
 </audio>
 
@@ -934,55 +934,58 @@ const bgAudio = document.getElementById('bg-audio');
 const audioCtrl = document.getElementById('audio-ctrl');
 const iconVolOn = document.getElementById('icon-vol-on');
 const iconVolOff = document.getElementById('icon-vol-off');
-let isAudioPlaying = false;
 
-// Fungsi untuk update tampilan tombol sesuai status audio
+// Fungsi update UI (Icon & State Tombol)
 function updateAudioUI() {
   if (bgAudio.paused) {
-    isAudioPlaying = false;
     audioCtrl.classList.add('muted');
     iconVolOn.style.display = 'none';
     iconVolOff.style.display = 'block';
   } else {
-    isAudioPlaying = true;
     audioCtrl.classList.remove('muted');
     iconVolOn.style.display = 'block';
     iconVolOff.style.display = 'none';
   }
 }
 
-// Event klik pada tombol controller
-audioCtrl.addEventListener('click', () => {
-  if (isAudioPlaying) {
-    bgAudio.pause();
+// 1. Coba Autoplay secepat mungkin
+window.addEventListener('DOMContentLoaded', () => {
+  const playPromise = bgAudio.play();
+  if (playPromise !== undefined) {
+    playPromise.catch(error => {
+      console.log("Browser memblokir autoplay audio unmuted. Menunggu interaksi pertama dari user.");
+    });
+  }
+});
+
+// 2. Jika autoplay ditolak, paksa nyala saat user sentuh/scroll/klik pertama kali di web
+const playOnInteract = (e) => {
+  // Abaikan fungsi ini kalau user langsung klik tombol icon volume (supaya nggak tumpang tindih)
+  if (e.target.closest('#audio-ctrl')) return;
+  
+  if (bgAudio.paused) {
+    bgAudio.play().then(() => {
+      // Kalau berhasil play, hapus pendeteksi interaksi ini
+      ['click', 'scroll', 'touchstart'].forEach(evt => document.removeEventListener(evt, playOnInteract));
+    }).catch(err => console.log("Gagal play:", err));
+  }
+};
+['click', 'scroll', 'touchstart'].forEach(evt => document.addEventListener(evt, playOnInteract, {passive: true}));
+
+// 3. Tombol volume untuk kendali manual oleh user
+audioCtrl.addEventListener('click', (e) => {
+  e.stopPropagation(); // Mencegah trigger fungsi playOnInteract di atas
+  if (bgAudio.paused) {
+    bgAudio.play();
   } else {
-    bgAudio.play().catch(e => console.log("Gagal memutar audio:", e));
+    bgAudio.pause();
   }
   updateAudioUI();
 });
 
-// Update UI jika audio stop/play dari script lain
+// Sinkronisasi otomatis icon volume dengan state lagu saat ini
 bgAudio.addEventListener('play', updateAudioUI);
 bgAudio.addEventListener('pause', updateAudioUI);
-
-// Autoplay Workaround (Coba play saat diload, jika diblokir, tunggu interaksi pertama)
-window.addEventListener('load', () => {
-  const playPromise = bgAudio.play();
-  if (playPromise !== undefined) {
-    playPromise.catch(error => {
-      console.log("Autoplay diblokir oleh browser. Menunggu interaksi pertama user.");
-      const playOnInteract = () => {
-        bgAudio.play();
-        document.body.removeEventListener('click', playOnInteract);
-        document.body.removeEventListener('scroll', playOnInteract);
-        document.body.removeEventListener('touchstart', playOnInteract);
-      };
-      document.body.addEventListener('click', playOnInteract, {once: true});
-      document.body.addEventListener('scroll', playOnInteract, {once: true});
-      document.body.addEventListener('touchstart', playOnInteract, {once: true});
-    });
-  }
-});
 
 
 // ---------- MENU MOBILE ----------
@@ -995,7 +998,6 @@ menu.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{
   menu.classList.remove('open');burger.setAttribute('aria-expanded','false');
 }));
 
-
 // ---------- FILTER PORTOFOLIO ----------
 const tabs=document.querySelectorAll('.tab'),cards=document.querySelectorAll('#pfGrid .card');
 tabs.forEach(t=>t.addEventListener('click',()=>{
@@ -1006,7 +1008,6 @@ tabs.forEach(t=>t.addEventListener('click',()=>{
   });
 }));
 
-
 // ---------- AKORDEON FAQ ----------
 document.querySelectorAll('.acc-q').forEach(q=>q.addEventListener('click',()=>{
   const item=q.parentElement,isOpen=item.classList.contains('open');
@@ -1014,7 +1015,6 @@ document.querySelectorAll('.acc-q').forEach(q=>q.addEventListener('click',()=>{
   if(!isOpen)item.classList.add('open');
 }));
 document.querySelector('.acc-item').classList.add('open');
-
 
 // ---------- TESTIMONI SLIDER ----------
 const data=[
