@@ -74,18 +74,18 @@ p{max-width:62ch}
   position:sticky;top:0;z-index:60;background:rgba(5,15,28,.92);
   backdrop-filter:blur(12px);border-bottom:1px solid var(--line);
 }
-.nav-in{display:flex;align-items:center;gap:28px;height:72px}
+.nav-in{display:flex;align-items:center;gap:24px;height:72px}
 .logo{display:flex;align-items:center;gap:11px;flex:none}
 .logo-txt{color:#fff;font-weight:800;letter-spacing:.02em;font-size:1.02rem;line-height:1.05}
 .logo-txt small{display:block;font-size:.5rem;letter-spacing:.24em;font-weight:600;color:rgba(255,255,255,.55);margin-top:3px}
-.menu{display:flex;gap:26px;margin-left:auto}
-.menu a{color:rgba(255,255,255,.82);font-size:.9rem;font-weight:500;position:relative;padding:4px 0}
+.menu{display:flex;gap:clamp(14px, 1.8vw, 26px);margin-left:auto}
+.menu a{color:rgba(255,255,255,.82);font-size:.9rem;font-weight:500;position:relative;padding:4px 0;white-space:nowrap;} /* white-space:nowrap mencegah menu turun ke baris baru */
 .menu a::after{content:"";position:absolute;left:0;right:100%;bottom:0;height:1.5px;background:var(--gold);transition:right .25s ease}
 .menu a:hover{color:#fff}
 .menu a:hover::after{right:0}
 .nav .btn{flex:none}
 .burger{display:none;color:#fff;padding:8px;margin-left:auto}
-@media (max-width:1000px){
+@media (max-width:1050px){
   .menu{display:none;position:absolute;top:72px;left:0;right:0;background:var(--navy-800);
     flex-direction:column;gap:0;padding:8px 24px 20px;border-bottom:1px solid var(--line)}
   .menu.open{display:flex}
@@ -137,7 +137,7 @@ p{max-width:62ch}
 .trust-item svg{width:28px;height:28px;color:var(--navy-700)}
 .trust-item span{font-size:.665rem;font-weight:600;color:#6B7684;letter-spacing:.01em}
 @media (max-width:860px){.trust-grid{grid-template-columns:repeat(5,1fr);gap:20px 10px}}
-@media (max-width:480px){.trust-grid{grid-template-columns:repeat(2,1fr);gap:24px 10px}} /* Diubah ke 2 kolom agar tidak sempit */
+@media (max-width:480px){.trust-grid{grid-template-columns:repeat(2,1fr);gap:24px 10px}}
 
 /* ---------- why ---------- */
 .why-in{display:grid;grid-template-columns:minmax(0,.92fr) minmax(0,1.08fr);gap:clamp(32px,5vw,64px)}
@@ -192,7 +192,6 @@ p{max-width:62ch}
 .pf-head{display:flex;align-items:flex-end;justify-content:space-between;gap:24px;flex-wrap:wrap}
 .pf-head h2{margin-top:12px}
 .tabs{display:flex;gap:6px;background:#F2EEE6;padding:5px;border-radius:999px}
-/* Sembunyikan scrollbar di mobile */
 .tabs::-webkit-scrollbar { display: none; }
 .tabs { -ms-overflow-style: none; scrollbar-width: none; }
 .tab{padding:8px 18px;border-radius:999px;font-size:.85rem;font-weight:600;color:var(--muted)}
@@ -221,7 +220,7 @@ p{max-width:62ch}
 @media (max-width:560px){.pf-grid{grid-template-columns:1fr}.tabs{width:100%;overflow:auto;white-space:nowrap}}
 
 /* ---------- contoh lagu ---------- */
-.song-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 24px; margin-top: 34px; } /* Diubah ke 240px agar responsif di HP sempit */
+.song-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 24px; margin-top: 34px; }
 .song-card { background: var(--white); padding: 24px; border-radius: var(--r); border: 1px solid #E5DCCB; box-shadow: 0 4px 20px rgba(0,0,0,0.03); display: flex; flex-direction: column;}
 .song-card h3 { font-size: 1.2rem; margin-bottom: 4px; letter-spacing: -0.01em; }
 .song-card p { font-size: 0.85rem; color: var(--muted); margin-bottom: 20px; }
@@ -296,28 +295,27 @@ p{max-width:62ch}
 @media (max-width:860px){
   .split{grid-template-columns:1fr}
   .script-cta{position:static;transform:none;text-align:left;margin-top:22px}
-  .testi-nav{justify-content: center;} /* Menengah-kan tombol slider testi di HP */
+  .testi-nav{justify-content: center;} 
 }
 
 /* ---------- footer ---------- */
-.foot{background:var(--navy-900);color:#fff;padding:30px 0}
-.foot-in{display:flex;align-items:center;gap:26px;flex-wrap:wrap}
-.foot-menu{display:flex;gap:20px;flex-wrap:wrap}
-.foot-menu a{font-size:.85rem;color:rgba(255,255,255,.72)}
+.foot{background:var(--navy-900);color:#fff;padding:46px 0 34px}
+.foot-top{display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;margin-bottom:30px;}
+.foot-menu{display:flex;gap:20px;flex-wrap:wrap;justify-content:center}
+.foot-menu a{font-size:.85rem;color:rgba(255,255,255,.72);white-space:nowrap;}
 .foot-menu a:hover{color:var(--gold)}
-.socials{display:flex;gap:9px;margin-left:auto}
+.socials{display:flex;gap:9px;}
 .soc{width:32px;height:32px;border-radius:9px;background:rgba(255,255,255,.08);display:grid;place-items:center;color:rgba(255,255,255,.8)}
 .soc:hover{background:var(--gold);color:#241803}
-.copy{width:100%;font-size:.76rem;color:rgba(255,255,255,.42);border-top:1px solid var(--line);padding-top:18px;margin-top:6px;text-align:center;}
-.script-foot{font-size:1.15rem;text-align:right;flex:none}
 
-/* Modifikasi Footer untuk layar sempit */
-@media (max-width:760px){
-  .foot-in { flex-direction: column; gap: 16px; text-align: center; }
-  .logo { justify-content: center; width: 100%; }
-  .foot-menu { justify-content: center; width: 100%; gap: 14px; }
-  .socials { justify-content: center; width: 100%; margin-left: 0; margin-top: 8px;}
-  .script-foot { text-align: center; width: 100%; margin-top: 10px; }
+.foot-bot{display:flex;align-items:center;justify-content:space-between;border-top:1px solid var(--line);padding-top:24px;flex-wrap:wrap-reverse;gap:16px;}
+.copy{font-size:.76rem;color:rgba(255,255,255,.42);}
+.script-foot{font-size:1.15rem;text-align:right;}
+
+@media (max-width:860px){
+  .foot-top{flex-direction:column;justify-content:center;text-align:center}
+  .foot-bot{flex-direction:column;justify-content:center;text-align:center}
+  .script-foot{text-align:center}
 }
 
 /* ---------- floating buttons ---------- */
@@ -338,7 +336,6 @@ p{max-width:62ch}
 .audio-ctrl svg { width:24px; height:24px; }
 .audio-ctrl.muted { background:var(--muted); opacity:0.8; }
 
-/* Menyesuaikan ukuran floating button untuk HP */
 @media (max-width:480px){
   .float-btn { width: 48px; height: 48px; bottom: 15px; }
   .wa { right: 15px; }
@@ -348,7 +345,7 @@ p{max-width:62ch}
 </head>
 <body>
 
-<!-- Audio Latar Belakang - Atribut autoplay disertakan -->
+<!-- Audio Latar Belakang -->
 <audio id="bg-audio" autoplay loop preload="auto">
   <source src="assets/us/Saatnya Brand-Mu Bersuara (1).mp3.mpeg" type="audio/mpeg">
 </audio>
@@ -903,29 +900,36 @@ p{max-width:62ch}
 
 <!-- ============ FOOTER ============ -->
 <footer class="foot">
-  <div class="wrap foot-in">
-    <a href="#beranda" class="logo">
-      <svg width="30" height="24" viewBox="0 0 34 28" aria-hidden="true">
-        <g fill="#E1B24A">
-          <rect x="0" y="11" width="3" height="6" rx="1.5"/><rect x="5" y="7" width="3" height="14" rx="1.5"/>
-          <rect x="10" y="2" width="3" height="24" rx="1.5"/><rect x="15" y="8" width="3" height="12" rx="1.5"/>
-          <rect x="20" y="4" width="3" height="20" rx="1.5"/><rect x="25" y="9" width="3" height="10" rx="1.5"/>
-          <rect x="30" y="12" width="3" height="4" rx="1.5"/>
-        </g>
-      </svg>
-      <span class="logo-txt">BRANDVOICE.ID<small>DIGITAL IDENTITY &amp; CORPORATE SOUND</small></span>
-    </a>
-    <nav class="foot-menu">
-      <a href="#beranda">Beranda</a><a href="#tentang">Tentang</a><a href="#layanan">Layanan</a>
-      <a href="#portofolio">Portofolio</a><a href="#contoh-lagu">Contoh Lagu</a><a href="#harga">Harga</a><a href="#faq">FAQ</a><a href="#kontak">Kontak</a>
-    </nav>
-    <div class="socials">
-      <a class="soc" href="#" aria-label="Instagram"><svg width="17" height="17"><use href="#i-ig"/></svg></a>
-      <a class="soc" href="#" aria-label="YouTube"><svg width="17" height="17"><use href="#i-yt"/></svg></a>
-      <a class="soc" href="#" aria-label="LinkedIn"><svg width="17" height="17"><use href="#i-in"/></svg></a>
+  <div class="wrap">
+    <!-- Bagian Atas Footer (Logo, Menu, Sosmed) -->
+    <div class="foot-top">
+      <a href="#beranda" class="logo">
+        <svg width="30" height="24" viewBox="0 0 34 28" aria-hidden="true">
+          <g fill="#E1B24A">
+            <rect x="0" y="11" width="3" height="6" rx="1.5"/><rect x="5" y="7" width="3" height="14" rx="1.5"/>
+            <rect x="10" y="2" width="3" height="24" rx="1.5"/><rect x="15" y="8" width="3" height="12" rx="1.5"/>
+            <rect x="20" y="4" width="3" height="20" rx="1.5"/><rect x="25" y="9" width="3" height="10" rx="1.5"/>
+            <rect x="30" y="12" width="3" height="4" rx="1.5"/>
+          </g>
+        </svg>
+        <span class="logo-txt">BRANDVOICE.ID<small>DIGITAL IDENTITY &amp; CORPORATE SOUND</small></span>
+      </a>
+      <nav class="foot-menu">
+        <a href="#beranda">Beranda</a><a href="#tentang">Tentang</a><a href="#layanan">Layanan</a>
+        <a href="#portofolio">Portofolio</a><a href="#contoh-lagu">Contoh Lagu</a><a href="#harga">Harga</a><a href="#faq">FAQ</a><a href="#kontak">Kontak</a>
+      </nav>
+      <div class="socials">
+        <a class="soc" href="#" aria-label="Instagram"><svg width="17" height="17"><use href="#i-ig"/></svg></a>
+        <a class="soc" href="#" aria-label="YouTube"><svg width="17" height="17"><use href="#i-yt"/></svg></a>
+        <a class="soc" href="#" aria-label="LinkedIn"><svg width="17" height="17"><use href="#i-in"/></svg></a>
+      </div>
     </div>
-    <span class="script script-foot">More Than a Brand,<br>A Lasting Voice</span>
-    <p class="copy">© 2026 Brandvoice.id. Semua hak dilindungi. | Semarang, Indonesia</p>
+
+    <!-- Bagian Bawah Footer (Copyright, Script Font) -->
+    <div class="foot-bot">
+      <p class="copy">© 2026 Brandvoice.id. Semua hak dilindungi. | Semarang, Indonesia</p>
+      <span class="script script-foot">More Than a Brand, A Lasting Voice</span>
+    </div>
   </div>
 </footer>
 
