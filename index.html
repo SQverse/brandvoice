@@ -79,7 +79,7 @@ p{max-width:62ch}
 .logo-txt{color:#fff;font-weight:800;letter-spacing:.02em;font-size:1.02rem;line-height:1.05}
 .logo-txt small{display:block;font-size:.5rem;letter-spacing:.24em;font-weight:600;color:rgba(255,255,255,.55);margin-top:3px}
 .menu{display:flex;gap:clamp(14px, 1.8vw, 26px);margin-left:auto}
-.menu a{color:rgba(255,255,255,.82);font-size:.9rem;font-weight:500;position:relative;padding:4px 0;white-space:nowrap;} /* white-space:nowrap mencegah menu turun ke baris baru */
+.menu a{color:rgba(255,255,255,.82);font-size:.9rem;font-weight:500;position:relative;padding:4px 0;white-space:nowrap;}
 .menu a::after{content:"";position:absolute;left:0;right:100%;bottom:0;height:1.5px;background:var(--gold);transition:right .25s ease}
 .menu a:hover{color:#fff}
 .menu a:hover::after{right:0}
@@ -105,56 +105,82 @@ p{max-width:62ch}
   display:grid;grid-template-columns:minmax(0,1.02fr) minmax(0,1.1fr);
   gap:40px;align-items:center;padding:clamp(52px,7vw,88px) 0 clamp(60px,7vw,92px);
 }
-.hero h1{font-size:clamp(2.1rem,4.7vw,3.35rem);margin:18px 0 20px}
+.hero h1{font-size:clamp(2rem,3.8vw,3rem);line-height:1.25;margin:18px 0 20px}
 .hero h1 .sound{color:var(--gold)}
 .hero-lead{color:rgba(255,255,255,.76);font-size:1.02rem;max-width:44ch}
 .hero-lead span{display:block}
 .hero-cta{display:flex;flex-wrap:wrap;gap:14px;margin-top:30px}
-.hero-art{position:relative;}
+.hero-art{position:relative; display:flex; flex-direction:column; align-items:center;}
 .hero-art svg { width: 100%; height: auto; max-width: 620px; margin: 0 auto; display: block; }
 .hero-note{
-  position:absolute;right:0;bottom:-6px;max-width:250px;text-align:right;
-  font-size:.79rem;color:rgba(255,255,255,.62);font-style:italic;line-height:1.55;
+  position:relative; max-width:85%; text-align:center; margin-top:20px;
+  font-size:.85rem; color:rgba(255,255,255,.7); font-style:italic; line-height:1.6;
 }
-.script-hero{position:absolute;top:2%;right:4%;font-size:1.55rem;transform:rotate(-7deg)}
+.script-hero{position:absolute;top:-10px;right:4%;font-size:1.55rem;transform:rotate(-7deg)}
 @media (max-width:900px){
   .hero-in{grid-template-columns:1fr;text-align:center;padding-bottom:50px;}
-  .hero h1 {font-size: clamp(1.85rem, 6.5vw, 2.8rem);}
+  .hero h1 {font-size: clamp(1.85rem, 6.5vw, 2.5rem);}
   .hero-lead{margin:0 auto}
   .hero-cta{justify-content:center}
-  .hero-note{position:static;max-width:none;text-align:center;margin-top:24px}
+  .hero-note{max-width:100%;}
   .script-hero{font-size:1.25rem;right:10%}
 }
 
-/* ---------- trust ---------- */
-.trust{background:var(--paper);padding:34px 0 40px;border-bottom:1px solid #EFE7D9}
-.trust-title{
-  text-align:center;font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;
-  color:#8A7752;font-weight:700;margin-bottom:26px;
+/* ---------- trust (DIUPDATE) ---------- */
+.trust{
+  background:linear-gradient(135deg, #FDFBF7 0%, #F4ECE1 100%);
+  padding: 64px 0;
+  border-bottom: 1px solid #E5DCCB;
 }
-.trust-grid{display:grid;grid-template-columns:repeat(10,1fr);gap:14px}
-.trust-item{display:flex;flex-direction:column;align-items:center;gap:9px;text-align:center;opacity:.8}
-.trust-item svg{width:28px;height:28px;color:var(--navy-700)}
-.trust-item span{font-size:.665rem;font-weight:600;color:#6B7684;letter-spacing:.01em}
-@media (max-width:860px){.trust-grid{grid-template-columns:repeat(5,1fr);gap:20px 10px}}
-@media (max-width:480px){.trust-grid{grid-template-columns:repeat(2,1fr);gap:24px 10px}}
+.trust-title{
+  text-align:center; font-size:1rem; letter-spacing:.15em; text-transform:uppercase;
+  color:var(--navy-700); font-weight:800; margin-bottom:40px;
+}
+/* UPDATE: Menggunakan flex agar otomatis berada di tengah */
+.trust-grid{
+  display: flex; 
+  flex-wrap: wrap; 
+  justify-content: center; 
+  gap: 16px;
+}
+.trust-item{
+  flex: 0 1 130px; /* Lebar dasar card, bisa mengecil jika diperlukan */
+  display:flex; flex-direction:column; align-items:center; justify-content:center; gap:12px; 
+  text-align:center; background:#fff; padding:20px 10px; border-radius:12px;
+  box-shadow:0 4px 15px rgba(0,0,0,0.04); border:1px solid rgba(225,178,74,0.15);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.trust-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(225,178,74,0.15);
+}
+.trust-item svg{width:32px; height:32px; color:var(--gold-deep)}
+.trust-item span{font-size:.7rem; font-weight:700; color:var(--navy-800); letter-spacing:.02em; line-height:1.3;}
+
+@media (max-width:560px){
+  .trust-grid{gap: 12px;}
+  .trust-item { flex: 0 1 calc(50% - 12px); } /* Menjadi 2 kolom di layar sangat kecil */
+}
 
 /* ---------- why ---------- */
-.why-in{display:grid;grid-template-columns:minmax(0,.92fr) minmax(0,1.08fr);gap:clamp(32px,5vw,64px)}
-.why h2{margin:14px 0 18px}
-.why p{color:var(--muted)}
-.feat-grid{display:grid;grid-template-columns:1fr 1fr;gap:30px 28px;align-content:center}
-.feat{display:flex;gap:14px}
+.why { padding: 90px 0; background: #fff; }
+.why-in{display:grid;grid-template-columns:minmax(0,.92fr) minmax(0,1.08fr);gap:clamp(40px,5vw,72px); align-items: center;}
+.why h2{margin:16px 0 20px; font-size: clamp(1.8rem, 3.5vw, 2.6rem); line-height: 1.25;}
+.why p{color:var(--muted); font-size: 1.05rem;}
+.feat-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px 32px;align-content:center}
+.feat{display:flex;gap:18px}
 .feat-ic{
-  flex:none;width:42px;height:42px;border-radius:11px;
+  flex:none;width:52px;height:52px;border-radius:14px;
   background:linear-gradient(140deg,#FBE9C2,#EFC66E);
   display:grid;place-items:center;color:#6B4C10;
+  box-shadow: 0 8px 20px rgba(225,178,74,0.25);
 }
-.feat-ic svg{width:21px;height:21px}
-.feat p{font-size:.875rem;color:var(--muted);margin-top:5px;line-height:1.6}
+.feat-ic svg{width:24px;height:24px}
+.feat h3 { font-size: 1.1rem; color: var(--navy-900); margin-bottom: 6px;}
+.feat p{font-size:.9rem;color:var(--muted);margin-top:0;line-height:1.6}
 @media (max-width:860px){
   .why-in{grid-template-columns:1fr}
-  .feat-grid{grid-template-columns:1fr;gap:24px}
+  .feat-grid{grid-template-columns:1fr;gap:32px}
 }
 
 /* ---------- pricing ---------- */
@@ -347,7 +373,7 @@ p{max-width:62ch}
 
 <!-- Audio Latar Belakang -->
 <audio id="bg-audio" autoplay loop preload="auto">
-  <source src="assets/us/Saatnya Brand-Mu Bersuara (1).mp3.mpeg" type="audio/mpeg">
+  <source src="assets/us/brand voice.mp3.mpeg" type="audio/mpeg">
 </audio>
 
 <!-- icon sprite -->
@@ -539,6 +565,7 @@ p{max-width:62ch}
         </g>
 
         <!-- notebook -->
+        <!-- UPDATE: Menggunakan text-anchor middle dan menyesuaikan font size/posisi agar rapi di dalam kotak -->
         <g transform="translate(120,296)">
           <rect x="0" y="0" width="150" height="86" rx="6" fill="#F3EEE3"/>
           <rect x="0" y="0" width="150" height="86" rx="6" fill="url(#glowG)" opacity=".25"/>
@@ -546,9 +573,9 @@ p{max-width:62ch}
             <path d="M16 56h118M16 70h84"/>
           </g>
         </g>
-        <text x="132" y="338" font-family="Caveat, cursive" font-size="27" fill="#3E3526">More Than a Brand</text>
-        <text x="152" y="362" font-family="Caveat, cursive" font-size="27" fill="#3E3526">A Feeling</text>
-
+        <text x="195" y="335" font-family="Caveat, cursive" font-size="20" fill="#3E3526" text-anchor="middle">More Than a Brand</text>
+        <text x="195" y="362" font-family="Caveat, cursive" font-size="20" fill="#3E3526" text-anchor="middle">A Feeling</text>
+        
         <text x="352" y="404" font-family="Caveat, cursive" font-size="24" fill="#F2CE79">Your Brand, Our Sound</text>
       </svg>
       <p class="hero-note">“Musik menyentuh hati, website membangun kepercayaan. Bersama, keduanya menciptakan brand yang tak terlupakan.”</p>
@@ -569,8 +596,8 @@ p{max-width:62ch}
       <div class="trust-item"><svg><use href="#i-retail"/></svg><span>Retail &amp; F&amp;B</span></div>
       <div class="trust-item"><svg><use href="#i-auto"/></svg><span>Otomotif</span></div>
       <div class="trust-item"><svg><use href="#i-gov"/></svg><span>Instansi &amp; BUMN</span></div>
-      <div class="trust-item"><svg><use href="#i-school"/></svg><span>Sekolah &amp; Pendidikan</span></div>
-      <div class="trust-item"><svg><use href="#i-travel"/></svg><span>Travel &amp; Hospitality</span></div>
+      <div class="trust-item"><svg><use href="#i-school"/></svg><span>Pendidikan</span></div>
+      <div class="trust-item"><svg><use href="#i-travel"/></svg><span>Travel &amp; Tour</span></div>
     </div>
   </div>
 </section>
@@ -901,7 +928,7 @@ p{max-width:62ch}
 <!-- ============ FOOTER ============ -->
 <footer class="foot">
   <div class="wrap">
-    <!-- Bagian Atas Footer (Logo, Menu, Sosmed) -->
+    <!-- Bagian Atas Footer -->
     <div class="foot-top">
       <a href="#beranda" class="logo">
         <svg width="30" height="24" viewBox="0 0 34 28" aria-hidden="true">
@@ -925,7 +952,7 @@ p{max-width:62ch}
       </div>
     </div>
 
-    <!-- Bagian Bawah Footer (Copyright, Script Font) -->
+    <!-- Bagian Bawah Footer -->
     <div class="foot-bot">
       <p class="copy">© 2026 Brandvoice.id. Semua hak dilindungi. | Semarang, Indonesia</p>
       <span class="script script-foot">More Than a Brand, A Lasting Voice</span>
@@ -933,7 +960,7 @@ p{max-width:62ch}
   </div>
 </footer>
 
-<!-- FLOATING BUTTONS (Audio & WhatsApp) -->
+<!-- FLOATING BUTTONS -->
 <button id="audio-ctrl" class="float-btn audio-ctrl muted" aria-label="Play/Pause Background Music">
   <svg id="icon-vol-on" style="display:none;"><use href="#i-vol-on"/></svg>
   <svg id="icon-vol-off"><use href="#i-vol-off"/></svg>
@@ -950,7 +977,6 @@ const audioCtrl = document.getElementById('audio-ctrl');
 const iconVolOn = document.getElementById('icon-vol-on');
 const iconVolOff = document.getElementById('icon-vol-off');
 
-// Fungsi update UI (Icon & State Tombol)
 function updateAudioUI() {
   if (bgAudio.paused) {
     audioCtrl.classList.add('muted');
@@ -963,28 +989,20 @@ function updateAudioUI() {
   }
 }
 
-// Coba putar audio secara otomatis secepat mungkin saat DOM siap
 const tryAutoplay = () => {
   const playPromise = bgAudio.play();
   if (playPromise !== undefined) {
     playPromise.then(() => {
-      updateAudioUI(); // Berhasil auto-play
+      updateAudioUI();
     }).catch(error => {
-      console.log("Autoplay dicekal browser. Menunggu user tap atau klik untuk memutar.");
-      
-      // Pasang "jebakan" event. Saat user sentuh layar, klik, atau scroll...
+      console.log("Autoplay dicekal browser.");
       const playOnInteract = (e) => {
-        // Abaikan jika yang ditekan adalah tombol ikon volume (biar gak bentrok logic pause-nya)
         if (e.target.closest('#audio-ctrl')) return;
-
         bgAudio.play().then(() => {
           updateAudioUI();
-          // Lepas jebakan event ini supaya gak terus-terusan trigger tiap disentuh
           ['click', 'scroll', 'touchstart'].forEach(evt => document.removeEventListener(evt, playOnInteract));
         }).catch(err => console.log("Gagal memutar audio:", err));
       };
-      
-      // Tunggu interaksi pertama secara pasif
       ['click', 'scroll', 'touchstart'].forEach(evt => document.addEventListener(evt, playOnInteract, {passive: true, once: true}));
     });
   }
@@ -992,10 +1010,8 @@ const tryAutoplay = () => {
 
 window.addEventListener('DOMContentLoaded', tryAutoplay);
 
-// Logika ketika tombol volume (floating) di-klik manual
 audioCtrl.addEventListener('click', (e) => {
-  e.stopPropagation(); // Cegah jebakan autoplay jalan gara-gara klik ini
-  
+  e.stopPropagation(); 
   if (bgAudio.paused) {
     bgAudio.play();
   } else {
@@ -1004,10 +1020,8 @@ audioCtrl.addEventListener('click', (e) => {
   updateAudioUI();
 });
 
-// Pastikan UI ikon volume sinkron otomatis kalau audio ke-pause/play dari sumber lain
 bgAudio.addEventListener('play', updateAudioUI);
 bgAudio.addEventListener('pause', updateAudioUI);
-
 
 // ---------- MENU MOBILE ----------
 const burger=document.getElementById('burger'),menu=document.getElementById('menu');
