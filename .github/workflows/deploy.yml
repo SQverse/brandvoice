@@ -3,8 +3,7 @@ name: Deploy Website ke cPanel
 on:
   push:
     branches:
-      - main  # PENTING: Ganti menjadi 'master' jika branch utama di VS Code kamu bernama master
-
+      - main  
 jobs:
   web-deploy:
     name: Deploy ke Rumahweb
