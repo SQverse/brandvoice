@@ -5,6 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Brandvoice.id — Website Profesional &amp; Corporate Anthem untuk Perusahaan</title>
 <meta name="description" content="Brandvoice.id membangun identitas digital perusahaan lewat website profesional dan corporate anthem original. Berbasis di Semarang, melayani seluruh Indonesia.">
+<meta name="theme-color" content="#050F1C">
+<link rel="preload" as="image" href="assets/brandvoice-symbol.jpeg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Caveat:wght@500;600&display=swap" rel="stylesheet">
@@ -95,6 +97,23 @@ p{max-width:62ch}
 }
 .nav-in{display:flex;align-items:center;gap:24px;height:72px}
 .logo{display:flex;align-items:center;gap:11px;flex:none}
+.brand-lockup img{
+  width:38px;
+  height:44px;
+  object-fit:cover;
+  object-position:center;
+  border-radius:7px;
+  background:#050505;
+  box-shadow:0 4px 14px rgba(225,178,74,.12);
+}
+.footer-brand-lockup img{width:46px;height:54px}
+@media (max-width:520px){
+  .brand-lockup{gap:8px}
+  .brand-lockup img{width:32px;height:38px}
+  .logo-txt{font-size:.9rem}
+  .logo-txt small{font-size:.43rem;letter-spacing:.17em}
+  .footer-brand-lockup img{width:40px;height:48px}
+}
 .logo-txt{color:#fff;font-weight:800;letter-spacing:.02em;font-size:1.02rem;line-height:1.05}
 .logo-txt small{display:block;font-size:.5rem;letter-spacing:.24em;font-weight:600;color:rgba(255,255,255,.55);margin-top:3px}
 .menu{display:flex;gap:clamp(14px, 1.8vw, 26px);margin-left:auto}
@@ -238,6 +257,376 @@ p{max-width:62ch}
   .plans{grid-template-columns:1fr;max-width:420px;margin-inline:auto;gap:40px}
   .plan-pop { transform: none; }
   .plan-pop:hover { transform: translateY(-5px); }
+}
+
+
+/* ---------- portfolio (LIVE WEBSITE SHOWCASE) ---------- */
+.portfolio-showcase{
+  background:
+    radial-gradient(700px 420px at 92% 4%, rgba(225,178,74,.08), transparent 68%),
+    linear-gradient(180deg,#FBF8F3 0%,#F7F5F0 100%);
+  overflow:hidden;
+}
+.pf-intro{
+  display:flex;
+  align-items:flex-end;
+  justify-content:space-between;
+  gap:32px;
+  margin-bottom:34px;
+}
+.pf-intro-copy h2{margin:0 0 14px;max-width:18ch}
+.pf-lead{color:var(--muted);font-size:1rem;max-width:60ch}
+.pf-stat{
+  min-width:145px;
+  padding:20px 22px;
+  border:1px solid rgba(225,178,74,.28);
+  background:rgba(255,255,255,.72);
+  border-radius:20px;
+  box-shadow:0 14px 35px rgba(20,32,45,.06);
+  text-align:center;
+}
+.pf-stat strong{
+  display:block;
+  color:var(--navy-900);
+  font-size:2.2rem;
+  line-height:1;
+  letter-spacing:-.04em;
+}
+.pf-stat span{
+  display:block;
+  margin-top:7px;
+  color:var(--muted);
+  font-size:.72rem;
+  font-weight:800;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+}
+.pf-toolbar{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:20px;
+  flex-wrap:wrap;
+  margin-bottom:26px;
+}
+.pf-hint{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  color:var(--muted);
+  font-size:.78rem;
+  font-weight:600;
+}
+.pf-dot{
+  width:7px;
+  height:7px;
+  border-radius:50%;
+  background:#25D366;
+  box-shadow:0 0 0 5px rgba(37,211,102,.10);
+}
+.pf-grid-new{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:28px;
+}
+.website-card{
+  min-width:0;
+  background:#fff;
+  border:1px solid rgba(5,15,28,.08);
+  border-radius:22px;
+  overflow:hidden;
+  box-shadow:0 16px 42px rgba(5,15,28,.07);
+  transition:transform .35s ease,box-shadow .35s ease,border-color .35s ease;
+}
+.website-card:hover{
+  transform:translateY(-7px);
+  border-color:rgba(225,178,74,.45);
+  box-shadow:0 24px 55px rgba(5,15,28,.12);
+}
+.website-card[hidden]{display:none}
+.browser-preview{
+  position:relative;
+  aspect-ratio:16/10;
+  overflow:hidden;
+  background:#0B1420;
+}
+.browser-bar{
+  height:34px;
+  display:flex;
+  align-items:center;
+  gap:6px;
+  padding:0 13px;
+  background:#EDEAE4;
+  border-bottom:1px solid rgba(5,15,28,.08);
+  position:relative;
+  z-index:3;
+}
+.browser-dot{
+  width:8px;
+  height:8px;
+  border-radius:50%;
+  background:#C5C1B9;
+}
+.browser-url{
+  flex:1;
+  min-width:0;
+  margin-left:6px;
+  height:20px;
+  display:flex;
+  align-items:center;
+  padding:0 9px;
+  border-radius:6px;
+  background:rgba(255,255,255,.72);
+  color:#77736D;
+  font-size:.58rem;
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+}
+.browser-screen{
+  position:absolute;
+  left:0;right:0;bottom:0;top:34px;
+  background:#0A1A2E;
+  overflow:hidden;
+}
+.browser-screen iframe{
+  width:100%;
+  height:100%;
+  border:0;
+  display:block;
+  background:#fff;
+}
+.browser-screen img{
+  width:100%;
+  height:100%;
+  display:block;
+  object-fit:cover;
+  object-position:top center;
+  transition:transform .7s cubic-bezier(.2,.8,.2,1);
+}
+.website-card:hover .browser-screen img{transform:scale(1.035)}
+.preview-placeholder{
+  width:100%;
+  height:100%;
+  position:relative;
+  overflow:hidden;
+  background:
+    radial-gradient(420px 200px at 75% 10%,rgba(225,178,74,.26),transparent 70%),
+    linear-gradient(135deg,#07182A 0%,#123A5C 55%,#07121E 100%);
+}
+.preview-placeholder::before{
+  content:"";
+  position:absolute;
+  width:58%;
+  height:72%;
+  right:-7%;
+  top:12%;
+  border-radius:18px;
+  border:1px solid rgba(255,255,255,.16);
+  background:linear-gradient(160deg,rgba(255,255,255,.12),rgba(255,255,255,.02));
+  transform:rotate(-7deg);
+}
+.preview-placeholder::after{
+  content:"";
+  position:absolute;
+  left:9%;
+  right:38%;
+  bottom:16%;
+  height:7px;
+  border-radius:999px;
+  background:rgba(242,206,121,.65);
+  box-shadow:0 -18px 0 rgba(255,255,255,.18),0 -36px 0 rgba(255,255,255,.12);
+}
+.preview-placeholder-content{
+  position:absolute;
+  z-index:2;
+  left:9%;
+  top:17%;
+  max-width:55%;
+  color:#fff;
+}
+.preview-placeholder-content small{
+  display:block;
+  color:var(--gold-soft);
+  font-size:.58rem;
+  font-weight:800;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+  margin-bottom:10px;
+}
+.preview-placeholder-content strong{
+  display:block;
+  font-size:clamp(1rem,2vw,1.45rem);
+  line-height:1.15;
+  letter-spacing:-.025em;
+}
+.preview-placeholder-content span{
+  display:block;
+  margin-top:9px;
+  color:rgba(255,255,255,.58);
+  font-size:.68rem;
+}
+.live-badge{
+  position:absolute;
+  z-index:5;
+  top:47px;
+  right:12px;
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+  padding:6px 9px;
+  border-radius:999px;
+  background:rgba(5,15,28,.76);
+  border:1px solid rgba(255,255,255,.13);
+  color:#fff;
+  font-size:.62rem;
+  font-weight:800;
+  backdrop-filter:blur(8px);
+}
+.live-badge i{
+  width:6px;height:6px;border-radius:50%;
+  background:#25D366;
+  box-shadow:0 0 0 4px rgba(37,211,102,.13);
+}
+.website-meta{padding:20px 20px 21px}
+.website-meta-top{
+  display:flex;
+  align-items:flex-start;
+  justify-content:space-between;
+  gap:12px;
+}
+.website-meta h3{
+  color:var(--navy-900);
+  font-size:1.05rem;
+  margin:0;
+}
+.website-meta .project-type{
+  color:var(--gold-deep);
+  font-size:.68rem;
+  font-weight:800;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  margin-top:5px;
+}
+.website-meta p{
+  color:var(--muted);
+  font-size:.78rem;
+  line-height:1.55;
+  margin-top:11px;
+}
+.project-actions{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  margin-top:17px;
+}
+.project-link{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:7px;
+  min-height:38px;
+  padding:9px 13px;
+  border-radius:999px;
+  font-size:.74rem;
+  font-weight:800;
+  transition:all .25s ease;
+}
+.project-link.primary{
+  background:var(--navy-900);
+  color:#fff;
+}
+.project-link.primary:hover{
+  background:var(--gold);
+  color:#241803;
+  transform:translateY(-2px);
+}
+.project-link.secondary{
+  border:1px solid #E1DDD5;
+  color:var(--navy-800);
+}
+.project-link.secondary:hover{
+  border-color:var(--gold);
+  color:var(--gold-deep);
+}
+.project-link svg{flex:none}
+.pf-empty{
+  padding:60px 24px;
+  border:1px dashed #D8D1C4;
+  border-radius:22px;
+  text-align:center;
+  background:rgba(255,255,255,.5);
+}
+.pf-empty[hidden]{display:none}
+.pf-empty-icon{
+  width:54px;height:54px;
+  margin:0 auto 16px;
+  display:grid;place-items:center;
+  border-radius:16px;
+  background:#F1ECE3;
+  color:var(--gold-deep);
+}
+.pf-empty h3{color:var(--navy-900);margin-bottom:6px}
+.pf-empty p{color:var(--muted);font-size:.86rem;margin:0 auto}
+.pf-empty code{
+  background:#EFEAE1;
+  padding:2px 6px;
+  border-radius:5px;
+  font-size:.78rem;
+}
+.pf-manage{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:28px;
+  margin-top:34px;
+  padding:28px 30px;
+  border-radius:22px;
+  background:var(--navy-900);
+  color:#fff;
+  overflow:hidden;
+  position:relative;
+}
+.pf-manage::after{
+  content:"";
+  position:absolute;
+  width:260px;height:260px;
+  right:-120px;top:-150px;
+  border-radius:50%;
+  background:radial-gradient(circle,rgba(225,178,74,.22),transparent 68%);
+}
+.pf-manage > div{position:relative;z-index:1}
+.pf-manage-kicker{
+  display:block;
+  color:var(--gold-soft);
+  font-size:.66rem;
+  font-weight:800;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+  margin-bottom:7px;
+}
+.pf-manage h3{font-size:1.18rem;margin-bottom:7px}
+.pf-manage p{color:rgba(255,255,255,.62);font-size:.82rem;max-width:66ch}
+.pf-manage .btn{position:relative;z-index:2;flex:none}
+
+@media (max-width:1050px){
+  .pf-grid-new{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media (max-width:760px){
+  .pf-intro{align-items:flex-start;flex-direction:column}
+  .pf-stat{min-width:0;width:100%;display:flex;align-items:center;justify-content:space-between;text-align:left}
+  .pf-stat strong{font-size:1.8rem}
+  .pf-stat span{margin:0}
+  .pf-grid-new{grid-template-columns:1fr}
+  .pf-manage{flex-direction:column;align-items:flex-start}
+}
+@media (max-width:520px){
+  .pf-toolbar{align-items:stretch}
+  .pf-toolbar .tabs{width:100%;overflow:auto;justify-content:flex-start}
+  .pf-hint{font-size:.72rem}
+  .website-meta{padding:18px}
+  .project-actions{flex-wrap:wrap}
+  .project-link{flex:1}
 }
 
 /* ---------- portfolio (MODERN TABS & HOVER) ---------- */
@@ -499,14 +888,8 @@ p{max-width:62ch}
 <!-- ============ NAV ============ -->
 <header class="nav">
   <div class="wrap nav-in">
-    <a href="#beranda" class="logo" aria-label="Brandvoice.id, kembali ke beranda">
-      <svg width="34" height="28" viewBox="0 0 34 28" aria-hidden="true">
-        <g fill="#E1B24A">
-          <rect x="0" y="11" width="3" height="6" rx="1.5"/><rect x="5" y="7" width="3" height="14" rx="1.5"/>
-          <rect x="10" y="2" width="3" height="24" rx="1.5"/><rect x="15" y="8" width="3" height="12" rx="1.5"/>
-          <rect x="20" y="4" width="3" height="20" rx="1.5"/><rect x="25" y="9" width="3" height="10" rx="1.5"/><rect x="30" y="12" width="3" height="4" rx="1.5"/>
-        </g>
-      </svg>
+    <a href="#beranda" class="logo brand-lockup" aria-label="Brandvoice.id, kembali ke beranda">
+      <img src="assets/brandvoice-symbol.jpeg" alt="" width="38" height="44">
       <span class="logo-txt">BRANDVOICE.ID<small>DIGITAL IDENTITY &amp; CORPORATE SOUND</small></span>
     </a>
     <button class="burger" id="burger" aria-expanded="false" aria-controls="menu" aria-label="Buka menu">
@@ -743,42 +1126,54 @@ p{max-width:62ch}
 </section>
 
 <!-- ============ PORTFOLIO ============ -->
-<section class="sec" id="portofolio">
+<section class="sec portfolio-showcase" id="portofolio">
   <div class="wrap">
-    <div class="pf-head reveal">
-      <div>
-        <p class="eyebrow">Portofolio Klien</p>
-        <h2>Bukti nyata karya kami</h2>
+    <div class="pf-intro reveal">
+      <div class="pf-intro-copy">
+        <p class="eyebrow">Portofolio Website</p>
+        <h2>Website yang bisa langsung Anda lihat.</h2>
+        <p class="pf-lead">
+          Setiap karya ditampilkan menggunakan screenshot halaman awal website yang sudah
+          Anda buat. Tinggal masukkan foto screenshot ke folder portfolio, lalu isi URL live-nya.
+        </p>
       </div>
+      <div class="pf-stat reveal delay-1">
+        <strong id="portfolioCount">0</strong>
+        <span>karya website</span>
+      </div>
+    </div>
+
+    <div class="pf-toolbar reveal delay-1">
       <div class="tabs" role="tablist" aria-label="Filter portofolio">
         <button class="tab" role="tab" aria-selected="true" data-filter="semua">Semua</button>
         <button class="tab" role="tab" aria-selected="false" data-filter="website">Website</button>
         <button class="tab" role="tab" aria-selected="false" data-filter="anthem">Anthem</button>
         <button class="tab" role="tab" aria-selected="false" data-filter="video">Video</button>
       </div>
+      <p class="pf-hint"><span class="pf-dot"></span> Screenshot website · klik kartu untuk membuka versi live</p>
     </div>
 
-    <div class="pf-grid" id="pfGrid">
-      <a href="#kontak" class="card reveal delay-1" data-cat="website anthem">
-        <span class="card-bg" style="background:linear-gradient(150deg,#1E4A72,#07182A)"></span>
-        <span class="card-open"><svg width="14" height="14"><use href="#i-expand"/></svg></span>
-        <span class="card-meta"><strong>Hotel &amp; Resort</strong><span>Website + Anthem</span></span>
-      </a>
-      <a href="#kontak" class="card reveal delay-2" data-cat="website anthem">
-        <span class="card-bg" style="background:linear-gradient(150deg,#245E85,#08202F)"></span>
-        <span class="card-open"><svg width="14" height="14"><use href="#i-expand"/></svg></span>
-        <span class="card-meta"><strong>Rumah Sakit</strong><span>Website + Anthem</span></span>
-      </a>
-      <a href="#kontak" class="card reveal delay-3" data-cat="website anthem video">
-        <span class="card-bg" style="background:linear-gradient(150deg,#2C5A4F,#0A1B22)"></span>
-        <span class="card-open"><svg width="14" height="14"><use href="#i-expand"/></svg></span>
-        <span class="card-meta"><strong>Pendidikan</strong><span>Website + Video</span></span>
-      </a>
-      <a href="#kontak" class="card reveal delay-4" data-cat="website jingle">
-        <span class="card-bg" style="background:linear-gradient(150deg,#6B5227,#121A22)"></span>
-        <span class="card-open"><svg width="14" height="14"><use href="#i-expand"/></svg></span>
-        <span class="card-meta"><strong>Property &amp; Developer</strong><span>Website + Jingle</span></span>
-      </a>
+    <div class="pf-grid pf-grid-new" id="pfGrid" aria-live="polite"></div>
+
+    <div class="pf-empty" id="pfEmpty" hidden>
+      <div class="pf-empty-icon">
+        <svg width="26" height="26"><use href="#i-web"/></svg>
+      </div>
+      <h3>Belum ada karya di kategori ini</h3>
+      <p>Tambahkan project baru ke data <code>websiteProjects</code> di bagian JavaScript.</p>
+    </div>
+
+    <div class="pf-manage reveal">
+      <div>
+        <span class="pf-manage-kicker">Scalable portfolio</span>
+        <h3>Tinggal tambah project baru.</h3>
+        <p>
+          Struktur portofolio ini sengaja dibuat berbasis data. Setiap project cukup memiliki
+          nama, kategori, URL, dan satu screenshot tampilan awal website. Layout akan mengikuti
+          otomatis meskipun jumlah project terus bertambah.
+        </p>
+      </div>
+      <a class="btn btn-outline-gold" href="#kontak">Punya project untuk ditampilkan?</a>
     </div>
   </div>
 </section>
@@ -921,12 +1316,8 @@ p{max-width:62ch}
 <footer class="foot">
   <div class="wrap">
     <div class="foot-top">
-      <a href="#beranda" class="logo">
-        <svg width="34" height="28" viewBox="0 0 34 28" aria-hidden="true">
-          <g fill="#E1B24A">
-            <rect x="0" y="11" width="3" height="6" rx="1.5"/><rect x="5" y="7" width="3" height="14" rx="1.5"/><rect x="10" y="2" width="3" height="24" rx="1.5"/><rect x="15" y="8" width="3" height="12" rx="1.5"/><rect x="20" y="4" width="3" height="20" rx="1.5"/><rect x="25" y="9" width="3" height="10" rx="1.5"/><rect x="30" y="12" width="3" height="4" rx="1.5"/>
-          </g>
-        </svg>
+      <a href="#beranda" class="logo brand-lockup footer-brand-lockup" aria-label="Brandvoice.id, kembali ke beranda">
+        <img src="assets/brandvoice-symbol.jpeg" alt="" width="46" height="54">
         <span class="logo-txt">BRANDVOICE.ID<small>DIGITAL IDENTITY &amp; CORPORATE SOUND</small></span>
       </a>
       <nav class="foot-menu">
@@ -1094,13 +1485,205 @@ menu.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{
   menu.classList.remove('open');burger.setAttribute('aria-expanded','false');
 }));
 
-// ---------- FILTER PORTOFOLIO ----------
-const tabs=document.querySelectorAll('.tab'),cards=document.querySelectorAll('#pfGrid .card');
-tabs.forEach(t=>t.addEventListener('click',()=>{
-  tabs.forEach(x=>x.setAttribute('aria-selected',x===t));
-  const f=t.dataset.filter;
-  cards.forEach(c=>{ c.style.display=(f==='semua'||c.dataset.cat.includes(f))?'':'none'; });
+// ---------- PORTFOLIO WEBSITE DATA ----------
+// Tambahkan project baru di sini. Struktur ini sengaja dibuat scalable.
+//
+// - url: URL GitHub Pages / website live
+// - preview: screenshot tampilan awal website yang Anda simpan di folder assets/portfolio/
+//   Contoh: assets/portfolio/project-01.webp
+// - category: website | anthem | video (boleh lebih dari satu)
+// - accent: hanya dipakai sebagai fallback jika screenshot belum diisi
+//
+// CARA TAMBAH WEBSITE:
+// 1. Screenshot halaman awal website Anda.
+// 2. Simpan fotonya ke: assets/portfolio/
+// 3. Isi nama file pada property preview.
+// 4. Isi URL GitHub Pages pada property url.
+// 5. Duplikasi object di bawah untuk project berikutnya.
+const websiteProjects = [
+  {
+    name: 'Quantum Telecommunication',
+    type: 'Company Profile Website',
+    category: ['website'],
+    description: 'Website company profile untuk LPK Quantum Telecommunication Semarang.',
+    url: 'https://quantumtelecom.id/',
+    preview: 'assets/portfolio/ss-quantum.webp',
+    accent: 'gold'
+  },
+  {
+    name: 'Vbat Ponsel',
+    type: 'Landing Page',
+    category: ['website'],
+    description: 'Landing page untuk vbatponsel.',
+    url: 'https://vbatponsel.com/',
+    preview: 'assets/portfolio/ss-vbatponsel.webp',
+    accent: 'blue'
+  },
+  {
+    name: 'Soppi - Sop Iga Sapi',
+    type: 'Landing Page',
+    category: ['website', 'anthem'],
+    description: 'Landing page untuk rumah makan Soppi - Sop Iga Sapi.',
+    url: 'https://sqverse.github.io/soppi/',
+    preview: 'assets/portfolio/ss-soppi.webp',
+    accent: 'green'
+  },
+  {
+    name: 'Kopi Gelas Tjilik',
+    type: 'Landing Page',
+    category: ['website', 'anthem'],
+    description: 'Landing page untuk Kopi Gelas Tjilik.',
+    url: 'https://sqverse.github.io/kopi-gelas-tjilik/',
+    preview: 'assets/portfolio/ss-kgt.webp',
+    accent: 'violet'
+  },
+  {
+    name: 'Soto Angkring Mas Boed',
+    type: 'Landing Page',
+    category: ['website', 'anthem'],
+    description: 'Landing page untuk rumah makan Soto Angkring Mas Boed.',
+    url: 'https://sqverse.github.io/soto-angkring-mas-boed/',
+    preview: 'assets/portfolio/ss-soto-angkring-mas-boed.webp',
+    accent: 'orange'
+  },
+  {
+    name: 'Kedai Pleburan',
+    type: 'Landing Page',
+    category: ['website', 'anthem'],
+    description: 'Landing page untuk Kedai Pleburan.',
+    url: 'https://sqverse.github.io/kedai-pleburan/',
+    preview: 'assets/portfolio/ss-kedai-pleburan.webp',
+    accent: 'cyan'
+  },
+  {
+    name: 'Keboen Buah',
+    type: 'Landing Page',
+    category: ['website', 'anthem'],
+    description: 'Landing page untuk Keboen Buah.',
+    url: 'https://sqverse.github.io/keboen-buah/',
+    preview: 'assets/portfolio/ss-keboen-buah.webp',
+    accent: 'cyan'
+  },
+  {
+    name: 'Burjo Bae',
+    type: 'Landing Page',
+    category: ['website', 'anthem'],
+    description: 'Landing page untuk Burjo Bae.',
+    url: 'https://sqverse.github.io/burjo-bae/',
+    preview: 'assets/portfolio/ss-burjo-bae.webp',
+    accent: 'cyan'
+  },
+  {
+    name: 'Olsen',
+    type: 'Landing Page',
+    category: ['website', 'anthem'],
+    description: 'Landing page untuk Burjo Bae.',
+    url: 'https://sqverse.github.io/olsen/',
+    preview: 'assets/portfolio/ss-olsen.webp',
+    accent: 'cyan'
+  }
+];
+
+const pfGrid = document.getElementById('pfGrid');
+const pfEmpty = document.getElementById('pfEmpty');
+const portfolioCount = document.getElementById('portfolioCount');
+
+const escapeHTML = (value = '') => String(value).replace(/[&<>"']/g, char => ({
+  '&':'&amp;', '<':'&lt;', '>':'&gt;', '"':'&quot;', "'":'&#039;'
+}[char]));
+
+const isValidHttpUrl = value => /^https?:\/\//i.test(value);
+
+const accentMap = {
+  gold: 'linear-gradient(135deg,#0A1A2E 0%,#17375B 52%,#B8862B 160%)',
+  blue: 'linear-gradient(135deg,#061A2E 0%,#155B8D 55%,#0B253B 100%)',
+  green: 'linear-gradient(135deg,#071C1B 0%,#21685D 55%,#0B2525 100%)',
+  violet: 'linear-gradient(135deg,#111027 0%,#51457E 55%,#161326 100%)',
+  orange: 'linear-gradient(135deg,#23170C 0%,#8B5B2B 55%,#17110B 100%)',
+  cyan: 'linear-gradient(135deg,#061A23 0%,#1E7080 55%,#091A22 100%)'
+};
+
+function renderPortfolio(filter = 'semua'){
+  const filtered = websiteProjects.filter(project =>
+    filter === 'semua' || project.category.includes(filter)
+  );
+
+  pfGrid.innerHTML = filtered.map((project, index) => {
+    const validUrl = isValidHttpUrl(project.url);
+    const validPreview = project.preview && (project.preview.startsWith('assets/') || project.preview.startsWith('./') || project.preview.startsWith('../'));
+
+    const preview = validPreview
+      ? `<img src="${escapeHTML(project.preview)}" alt="Screenshot tampilan ${escapeHTML(project.name)}" loading="lazy" decoding="async">`
+      : `<div class="preview-placeholder" style="background:${accentMap[project.accent] || accentMap.gold}">
+          <div class="preview-placeholder-content">
+            <small>Tambahkan Screenshot</small>
+            <strong>${escapeHTML(project.name)}</strong>
+            <span>assets/portfolio/...</span>
+          </div>
+        </div>`;
+
+    const primaryAction = validUrl
+      ? `<a class="project-link primary" href="${escapeHTML(project.url)}" target="_blank" rel="noopener noreferrer">
+          Buka Website <svg width="14" height="14"><use href="#i-arrow"/></svg>
+        </a>`
+      : `<a class="project-link primary" href="#kontak">Minta Demo <svg width="14" height="14"><use href="#i-arrow"/></svg></a>`;
+
+    return `
+      <article class="website-card reveal" data-cat="${project.category.join(' ')}" style="transition-delay:${Math.min(index,5) * 70}ms">
+        <div class="browser-preview">
+          <div class="browser-bar" aria-hidden="true">
+            <span class="browser-dot"></span><span class="browser-dot"></span><span class="browser-dot"></span>
+            <span class="browser-url">${validUrl ? escapeHTML(project.url.replace(/^https?:\/\//i,'')) : 'github-pages.example / preview'}</span>
+          </div>
+          <div class="browser-screen">${preview}</div>
+          <span class="live-badge"><i></i>${validUrl ? 'LIVE' : 'MOCKUP'}</span>
+        </div>
+        <div class="website-meta">
+          <div class="website-meta-top">
+            <div>
+              <h3>${escapeHTML(project.name)}</h3>
+              <div class="project-type">${escapeHTML(project.type)}</div>
+            </div>
+          </div>
+          <p>${escapeHTML(project.description)}</p>
+          <div class="project-actions">
+            ${primaryAction}
+            ${validUrl ? `<a class="project-link secondary" href="${escapeHTML(project.url)}" target="_blank" rel="noopener noreferrer" aria-label="Lihat ${escapeHTML(project.name)}">Live ↗</a>` : ''}
+          </div>
+        </div>
+      </article>`;
+  }).join('');
+
+  // Jika screenshot belum ada / nama file salah, tampilkan fallback yang rapi
+  // tanpa merusak tinggi kartu.
+  pfGrid.querySelectorAll('.browser-screen img').forEach(img => {
+    img.addEventListener('error', () => {
+      const wrapper = img.closest('.browser-screen');
+      if (!wrapper) return;
+      wrapper.innerHTML = `<div class="preview-placeholder">
+        <div class="preview-placeholder-content">
+          <small>Screenshot belum tersedia</small>
+          <strong>${img.alt.replace(/^Screenshot tampilan /, '')}</strong>
+          <span>Masukkan gambar ke assets/portfolio/</span>
+        </div>
+      </div>`;
+    }, { once:true });
+  });
+
+  portfolioCount.textContent = websiteProjects.filter(p => p.category.includes('website')).length;
+  pfEmpty.hidden = filtered.length !== 0;
+
+  // Re-run reveal observer for dynamically rendered cards.
+  pfGrid.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+}
+
+const portfolioTabs = document.querySelectorAll('.portfolio-showcase .tab');
+portfolioTabs.forEach(tab => tab.addEventListener('click', () => {
+  portfolioTabs.forEach(item => item.setAttribute('aria-selected', item === tab ? 'true' : 'false'));
+  renderPortfolio(tab.dataset.filter);
 }));
+
+renderPortfolio('semua');
 
 // ---------- AKORDEON FAQ ----------
 document.querySelectorAll('.acc-q').forEach(q=>q.addEventListener('click',()=>{
