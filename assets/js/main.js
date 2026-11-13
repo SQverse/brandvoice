@@ -1,7 +1,7 @@
 /* BrandVoice.id — script halaman */
 /* ====== PENGATURAN — GANTI DI SINI ====== */
-var WA_NUMBER  = "62818268717";   // nomor WhatsApp, format 62xxxxxxxxxx (tanpa + dan tanpa 0 di depan)
-var WA_DISPLAY = "0818-268-717";  // nomor yang tampil di footer
+var WA_NUMBER  = "6281390111550";   // nomor WhatsApp, format 62xxxxxxxxxx (tanpa + dan tanpa 0 di depan)
+var WA_DISPLAY = "0813-9011-1550"; // nomor yang tampil di footer
 var BG_VOLUME  = 0.4;             // volume musik latar (0 - 1)
 /* ======================================== */
 
