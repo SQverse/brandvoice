@@ -1,0 +1,13 @@
+{
+  "name": "BrandVoice.id",
+  "short_name": "BrandVoice",
+  "description": "Website profesional & corporate anthem untuk brand Anda.",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#04112f",
+  "theme_color": "#061a4a",
+  "icons": [
+    { "src": "assets/icons/icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "assets/icons/icon-512.png", "sizes": "512x512", "type": "image/png" }
+  ]
+}

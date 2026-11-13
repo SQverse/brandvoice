@@ -1,0 +1,14 @@
+# Arsip & file sementara
+*.zip
+*.rar
+*.tmp
+*.bak
+
+# File sistem
+Thumbs.db
+desktop.ini
+.DS_Store
+
+# Editor
+.vscode/
+.idea/

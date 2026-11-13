@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <!-- Logo BrandVoice.id: 5 batang emas, sama dengan .bars di navbar -->
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0a2a78"/>
+      <stop offset=".6" stop-color="#061a4a"/>
+      <stop offset="1" stop-color="#04112f"/>
+    </linearGradient>
+    <linearGradient id="gold" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffe07a"/>
+      <stop offset=".55" stop-color="#f5b921"/>
+      <stop offset="1" stop-color="#d99a0b"/>
+    </linearGradient>
+  </defs>
+  <rect width="64" height="64" rx="14" fill="url(#bg)"/>
+  <!-- grup lebar 32 unit x 1.5 = 48px, batang 6px, jarak 4.5px -->
+  <g fill="url(#gold)">
+    <rect x="8"    y="22.88" width="6" height="18.24" rx="3"/>
+    <rect x="18.5" y="14.72" width="6" height="34.56" rx="3"/>
+    <rect x="29"   y="8"     width="6" height="48"    rx="3"/>
+    <rect x="39.5" y="17.6"  width="6" height="28.8"  rx="3"/>
+    <rect x="50"   y="24.8"  width="6" height="14.4"  rx="3"/>
+  </g>
+</svg>
