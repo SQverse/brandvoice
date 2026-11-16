@@ -32,18 +32,19 @@ document.addEventListener('click', function(e){
 
 // ---------- Portofolio website klien ----------
 // CARA TAMBAH WEBSITE BARU:
-// 1. Screenshot halaman awal website (tanpa bar browser & taskbar, ukuran 1584x734), simpan ke folder assets/images/portfolio/
+// 1. Screenshot halaman awal website (tanpa bar browser & taskbar, ukuran 1584x734), simpan ke folder assets/images/portofolio/websites/
 // 2. Salin satu baris di bawah, lalu ganti name, type, description, url, dan preview.
 var websiteProjects = [
-  { name:'Quantum Telecommunication', type:'Company Profile Website', description:'Website company profile untuk LPK Quantum Telecommunication Semarang.', url:'https://quantumtelecom.id/', preview:'assets/images/portfolio/ss-quantum.webp' },
-  { name:'Vbat Ponsel', type:'Landing Page', description:'Landing page untuk Vbat Ponsel.', url:'https://vbatponsel.com/', preview:'assets/images/portfolio/ss-vbatponsel.webp' },
-  { name:'Soppi - Sop Iga Sapi', type:'Landing Page', description:'Landing page untuk rumah makan Soppi - Sop Iga Sapi.', url:'https://sqverse.github.io/soppi/', preview:'assets/images/portfolio/ss-soppi.webp' },
-  { name:'Kopi Gelas Tjilik', type:'Landing Page', description:'Landing page untuk Kopi Gelas Tjilik.', url:'https://sqverse.github.io/kopi-gelas-tjilik/', preview:'assets/images/portfolio/ss-kgt.webp' },
-  { name:'Soto Angkring Mas Boed', type:'Landing Page', description:'Landing page untuk rumah makan Soto Angkring Mas Boed.', url:'https://sqverse.github.io/soto-angkring-mas-boed/', preview:'assets/images/portfolio/ss-soto-angkring-mas-boed.webp' },
-  { name:'Kedai Pleburan', type:'Landing Page', description:'Landing page untuk Kedai Pleburan.', url:'https://sqverse.github.io/kedai-pleburan/', preview:'assets/images/portfolio/ss-kedai-pleburan.webp' },
-  { name:'Keboen Buah', type:'Landing Page', description:'Landing page untuk Keboen Buah.', url:'https://sqverse.github.io/keboen-buah/', preview:'assets/images/portfolio/ss-keboen-buah.webp' },
-  { name:'Burjo Bae', type:'Landing Page', description:'Landing page untuk Burjo Bae.', url:'https://sqverse.github.io/burjo-bae/', preview:'assets/images/portfolio/ss-burjo-bae.webp' },
-  { name:'Olsen', type:'Landing Page', description:'Landing page untuk Olsen.', url:'https://sqverse.github.io/olsen/', preview:'assets/images/portfolio/ss-olsen.webp' }
+  { name:'Quantum Telecommunication', type:'Company Profile Website', description:'Website company profile untuk LPK Quantum Telecommunication Semarang.', url:'https://quantumtelecom.id/', preview:'assets/images/portofolio/websites/ss-quantum.webp' },
+  { name:'Vbat Ponsel', type:'Landing Page', description:'Landing page untuk Vbat Ponsel.', url:'https://vbatponsel.com/', preview:'assets/images/portofolio/websites/ss-vbatponsel.webp' },
+  { name:'Soppi - Sop Iga Sapi', type:'Landing Page', description:'Landing page untuk rumah makan Soppi - Sop Iga Sapi.', url:'https://sqverse.github.io/soppi/', preview:'assets/images/portofolio/websites/ss-soppi.webp' },
+  { name:'Kopi Gelas Tjilik', type:'Landing Page', description:'Landing page untuk Kopi Gelas Tjilik.', url:'https://sqverse.github.io/kopi-gelas-tjilik/', preview:'assets/images/portofolio/websites/ss-kgt.webp' },
+  { name:'Soto Angkring Mas Boed', type:'Landing Page', description:'Landing page untuk rumah makan Soto Angkring Mas Boed.', url:'https://sqverse.github.io/soto-angkring-mas-boed/', preview:'assets/images/portofolio/websites/ss-soto-angkring-mas-boed.webp' },
+  { name:'Kedai Pleburan', type:'Landing Page', description:'Landing page untuk Kedai Pleburan.', url:'https://sqverse.github.io/kedai-pleburan/', preview:'assets/images/portofolio/websites/ss-kedai-pleburan.webp' },
+  { name:'Keboen Buah', type:'Landing Page', description:'Landing page untuk Keboen Buah.', url:'https://sqverse.github.io/keboen-buah/', preview:'assets/images/portofolio/websites/ss-keboen-buah.webp' },
+  { name:'Burjo Bae', type:'Landing Page', description:'Landing page untuk Burjo Bae.', url:'https://sqverse.github.io/burjo-bae/', preview:'assets/images/portofolio/websites/ss-burjo-bae.webp' },
+  { name:'Olsen', type:'Landing Page', description:'Landing page untuk Olsen.', url:'https://sqverse.github.io/olsen/', preview:'assets/images/portofolio/websites/ss-olsen.webp' },
+  { name:'Tiyan Massage', type:'Landing Page', description:'Landing page untuk Tiyan Massage Semarang.', url:'https://sqverse.github.io/tiyan-message/', preview:'assets/images/portofolio/websites/ss-tiyan-massage.webp' }
 ];
 
 (function renderSites(){
