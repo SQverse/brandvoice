@@ -46,7 +46,7 @@ var websiteProjects = [
   { name:'Burjo Bae', type:'Landing Page', description:'Landing page untuk Burjo Bae.', url:'https://sqverse.github.io/burjo-bae/', preview:'assets/images/portofolio/websites/ss-burjo-bae.webp' },
   { name:'Olsen', type:'Landing Page', description:'Landing page untuk Olsen.', url:'https://sqverse.github.io/olsen/', preview:'assets/images/portofolio/websites/ss-olsen.webp' },
   { name:'Tiyan Massage', type:'Landing Page', description:'Landing page untuk Tiyan Massage Semarang.', url:'https://sqverse.github.io/tiyan-message/', preview:'assets/images/portofolio/websites/ss-tiyan-massage.webp' },
-  { name:'Amaga Corp', type:'Company Profile & Lagu Perusahaan', description:'Website company profile holding company Amaga Corp Semarang, lengkap dengan lagu perusahaan.', url:'', preview:'assets/images/portofolio/websites/ss-amaga-corp.webp' }
+  { name:'Amaga Corp', type:'Company Profile & Lagu Perusahaan', description:'Website company profile holding company Amaga Corp Semarang, lengkap dengan lagu perusahaan.', url:'https://sqverse.github.io/amaga-corp/', preview:'assets/images/portofolio/websites/ss-amaga-corp.webp' }
 ];
 
 (function renderSites(){
