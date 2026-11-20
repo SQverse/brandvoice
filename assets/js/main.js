@@ -34,6 +34,7 @@ document.addEventListener('click', function(e){
 // CARA TAMBAH WEBSITE BARU:
 // 1. Screenshot halaman awal website (tanpa bar browser & taskbar, ukuran 1584x734), simpan ke folder assets/images/portofolio/websites/
 // 2. Salin satu baris di bawah, lalu ganti name, type, description, url, dan preview.
+//    Kalau link belum ada, isi url:'' -> kartu tampil sebagai "Segera Live" tanpa link.
 var websiteProjects = [
   { name:'Quantum Telecommunication', type:'Company Profile Website', description:'Website company profile untuk LPK Quantum Telecommunication Semarang.', url:'https://quantumtelecom.id/', preview:'assets/images/portofolio/websites/ss-quantum.webp' },
   { name:'Vbat Ponsel', type:'Landing Page', description:'Landing page untuk Vbat Ponsel.', url:'https://vbatponsel.com/', preview:'assets/images/portofolio/websites/ss-vbatponsel.webp' },
@@ -44,21 +45,24 @@ var websiteProjects = [
   { name:'Keboen Buah', type:'Landing Page', description:'Landing page untuk Keboen Buah.', url:'https://sqverse.github.io/keboen-buah/', preview:'assets/images/portofolio/websites/ss-keboen-buah.webp' },
   { name:'Burjo Bae', type:'Landing Page', description:'Landing page untuk Burjo Bae.', url:'https://sqverse.github.io/burjo-bae/', preview:'assets/images/portofolio/websites/ss-burjo-bae.webp' },
   { name:'Olsen', type:'Landing Page', description:'Landing page untuk Olsen.', url:'https://sqverse.github.io/olsen/', preview:'assets/images/portofolio/websites/ss-olsen.webp' },
-  { name:'Tiyan Massage', type:'Landing Page', description:'Landing page untuk Tiyan Massage Semarang.', url:'https://sqverse.github.io/tiyan-message/', preview:'assets/images/portofolio/websites/ss-tiyan-massage.webp' }
+  { name:'Tiyan Massage', type:'Landing Page', description:'Landing page untuk Tiyan Massage Semarang.', url:'https://sqverse.github.io/tiyan-message/', preview:'assets/images/portofolio/websites/ss-tiyan-massage.webp' },
+  { name:'Amaga Corp', type:'Company Profile & Lagu Perusahaan', description:'Website company profile holding company Amaga Corp Semarang, lengkap dengan lagu perusahaan.', url:'', preview:'assets/images/portofolio/websites/ss-amaga-corp.webp' }
 ];
 
 (function renderSites(){
   var grid = document.getElementById('sites');
   function el(tag, cls, text){ var e = document.createElement(tag); if (cls) e.className = cls; if (text) e.textContent = text; return e; }
   websiteProjects.forEach(function(p, i){
-    var a = el('a', 'site rv');
-    a.href = p.url; a.target = '_blank'; a.rel = 'noopener noreferrer';
+    var a = el(p.url ? 'a' : 'div', 'site rv' + (p.url ? '' : ' soon'));
+    if (p.url) {
+      a.href = p.url; a.target = '_blank'; a.rel = 'noopener noreferrer';
+      a.setAttribute('aria-label', 'Buka website ' + p.name + ' (tab baru)');
+    }
     a.style.transitionDelay = (i % 3) * 80 + 'ms';
-    a.setAttribute('aria-label', 'Buka website ' + p.name + ' (tab baru)');
 
     var bar = el('div', 'site-bar');
     bar.setAttribute('aria-hidden', 'true');
-    bar.append(el('i'), el('i'), el('i'), el('span', '', p.url.replace(/^https?:\/\//, '').replace(/\/$/, '')), el('b', 'live', 'LIVE'));
+    bar.append(el('i'), el('i'), el('i'), el('span', '', p.url ? p.url.replace(/^https?:\/\//, '').replace(/\/$/, '') : 'segera live'), el('b', 'live', p.url ? 'LIVE' : 'SOON'));
 
     var shot = el('div', 'site-shot');
     var img = el('img');
@@ -68,7 +72,7 @@ var websiteProjects = [
     shot.append(img);
 
     var body = el('div', 'site-body');
-    var link = el('span', 'site-link', 'Buka Website ↗');
+    var link = el('span', 'site-link', p.url ? 'Buka Website ↗' : 'Segera Live');
     body.append(el('span', 'site-type', p.type), el('h4', '', p.name), el('p', '', p.description), link);
 
     a.append(bar, shot, body);

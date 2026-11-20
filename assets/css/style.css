@@ -146,6 +146,8 @@ section{padding:64px 0}
 .site-body p{font-size:.84rem;color:var(--muted);line-height:1.5;flex:1}
 .site-link{display:inline-flex;align-items:center;gap:6px;margin-top:10px;font-size:.82rem;font-weight:800;color:var(--navy-2)}
 .site:hover .site-link{color:var(--gold-3)}
+.site.soon .site-bar .live::before{background:var(--gold);box-shadow:0 0 0 3px rgba(212,175,55,.25)}
+.site.soon .site-link{color:#8a93a6}
 
 /* Testimoni */
 .testi-sec{background:#f7faff}
