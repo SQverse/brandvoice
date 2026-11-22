@@ -236,7 +236,8 @@ var websiteProjects = [
     else { bgUserOff = true; bgAudio.pause(); }
   });
 
-  // Browser memblokir autoplay bersuara, jadi musik latar dimulai pada interaksi pertama pengunjung
+  // Browser memblokir autoplay bersuara, jadi musik latar dimulai pada interaksi pertama pengunjung.
+  // File musik (±5 MB) baru diunduh saat itu, supaya halaman tetap cepat terbuka.
   var unlockEvents = ["pointerdown", "keydown", "touchstart"];
   function startOnInteract(e) {
     unlockEvents.forEach(function (ev) { document.removeEventListener(ev, startOnInteract, true); });
@@ -244,7 +245,5 @@ var websiteProjects = [
     var songPlaying = Array.prototype.some.call(document.querySelectorAll(".song audio"), function (a) { return !a.paused; });
     if (!songPlaying) bgAudio.play().catch(function () {});
   }
-  bgAudio.play().catch(function () {
-    unlockEvents.forEach(function (ev) { document.addEventListener(ev, startOnInteract, true); });
-  });
+  unlockEvents.forEach(function (ev) { document.addEventListener(ev, startOnInteract, true); });
 })();
