@@ -5,16 +5,21 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Brandvoice.id — Website Profesional & Corporate Anthem untuk Bisnis Anda</title>
   <meta name="description" content="Brandvoice.id membantu bisnis tampil profesional dan mudah diingat lewat Website Company Profile, Corporate Anthem (lagu perusahaan), dan Jingle. Konsultasi gratis sekarang.">
-  <meta name="keywords" content="jasa website company profile, corporate anthem, lagu perusahaan, jingle iklan, branding bisnis, brandvoice">
+  <meta name="robots" content="index, follow, max-image-preview:large">
   <meta name="theme-color" content="#061a4f">
   <link rel="canonical" href="https://brandvoice.id/">
 
   <!-- Open Graph / Social -->
   <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Brandvoice.id">
+  <meta property="og:locale" content="id_ID">
   <meta property="og:url" content="https://brandvoice.id/">
   <meta property="og:title" content="Brandvoice.id — Solusi Identitas & Pertumbuhan Bisnis">
   <meta property="og:description" content="Bisnis Anda layak bertumbuh. Brand Anda layak didengar. Website profesional + Corporate Anthem original.">
-  <meta property="og:image" content="https://brandvoice.id/assets/images/hero.jpg">
+  <meta property="og:image" content="https://brandvoice.id/assets/images/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Produser musik di studio rekaman Brandvoice.id">
   <meta name="twitter:card" content="summary_large_image">
 
   <link rel="icon" href="favicon.ico" sizes="48x48">
@@ -22,24 +27,42 @@
   <link rel="icon" type="image/png" sizes="32x32" href="assets/icons/favicon-32.png">
   <link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png">
   <link rel="manifest" href="site.webmanifest">
-  <link rel="preload" as="image" href="assets/images/hero.jpg">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;0,800;1,700;1,800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/style.css?v=20261123">
+  <link rel="stylesheet" href="assets/css/style.css?v=20261128">
 
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "ProfessionalService",
-    "name": "Brandvoice.id",
-    "slogan": "Solusi Identitas & Pertumbuhan Bisnis",
-    "url": "https://brandvoice.id/",
-    "image": "https://brandvoice.id/assets/images/hero.jpg",
-    "email": "halo@brandvoice.id",
-    "telephone": "+6281390111550",
-    "address": {"@type": "PostalAddress", "addressLocality": "Semarang", "addressRegion": "Jawa Tengah", "addressCountry": "ID"},
-    "priceRange": "Rp4.500.000 - Rp8.500.000"
+    "@graph": [
+      {
+        "@type": "ProfessionalService",
+        "@id": "https://brandvoice.id/#organization",
+        "name": "Brandvoice.id",
+        "slogan": "Solusi Identitas & Pertumbuhan Bisnis",
+        "description": "Jasa pembuatan Website Company Profile, Corporate Anthem (lagu perusahaan), dan Jingle untuk bisnis dan instansi.",
+        "url": "https://brandvoice.id/",
+        "logo": "https://brandvoice.id/assets/icons/icon-512.png",
+        "image": "https://brandvoice.id/assets/images/og-image.jpg",
+        "email": "halo@brandvoice.id",
+        "telephone": "+6281390111550",
+        "address": {"@type": "PostalAddress", "addressLocality": "Semarang", "addressRegion": "Jawa Tengah", "addressCountry": "ID"},
+        "areaServed": {"@type": "Country", "name": "Indonesia"},
+        "knowsAbout": ["Website Company Profile", "Corporate Anthem", "Lagu Perusahaan", "Jingle Iklan", "SEO", "Branding Bisnis"],
+        "priceRange": "Rp4.500.000 - Rp8.500.000",
+        "contactPoint": {"@type": "ContactPoint", "telephone": "+6281390111550", "contactType": "customer service", "availableLanguage": "id"},
+        "makesOffer": [
+          {"@type": "Offer", "name": "Paket Branding", "description": "Website Company Profile, Corporate Anthem original, 20 lagu Corporate Instrument, SEO, domain & hosting 1 tahun.", "price": "4500000", "priceCurrency": "IDR", "url": "https://brandvoice.id/#paket"},
+          {"@type": "Offer", "name": "Paket Premium", "description": "Website Premium, Corporate Anthem, 50 lagu Corporate Instrument, jingle, video lirik HD, video branding, SEO, domain & hosting 1 tahun.", "price": "8500000", "priceCurrency": "IDR", "url": "https://brandvoice.id/#paket"}
+        ]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://brandvoice.id/#website",
+        "url": "https://brandvoice.id/",
+        "name": "Brandvoice.id",
+        "inLanguage": "id-ID",
+        "publisher": {"@id": "https://brandvoice.id/#organization"}
+      }
+    ]
   }
   </script>
 </head>
@@ -69,14 +92,14 @@
       <span class="logo__text"><b>BRANDVOICE<em>.ID</em></b><small>Solusi Identitas &amp; Pertumbuhan Bisnis</small></span>
     </a>
     <nav class="nav" id="nav" aria-label="Menu utama">
-      <a href="#beranda" class="active">Beranda</a>
+      <a href="#beranda">Beranda</a>
       <a href="#layanan">Layanan</a>
       <a href="#keunggulan">Keunggulan</a>
       <a href="#portofolio">Portofolio</a>
       <a href="#paket">Paket Harga</a>
       <a href="#testimoni">Testimoni</a>
       <a href="#faq">FAQ</a>
-      <a href="#" class="btn btn--gold btn--sm nav__cta js-wa" data-msg="Halo Brandvoice.id, saya ingin konsultasi gratis.">
+      <a href="https://wa.me/6281390111550?text=Halo%20Brandvoice.id%2C%20saya%20ingin%20konsultasi%20gratis." target="_blank" rel="noopener" class="btn btn--gold btn--sm nav__cta js-wa" data-msg="Halo Brandvoice.id, saya ingin konsultasi gratis.">
         <svg class="ico-wa" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-wa"/></svg> Konsultasi Gratis
       </a>
     </nav>
@@ -86,15 +109,19 @@
 
 <main>
 <!-- ============ HERO ============ -->
-<section class="hero" id="beranda">
-  <img class="hero__bg" src="assets/images/hero.jpg" alt="Produser musik di studio rekaman dengan laptop menampilkan website company profile" width="1600" height="1028" fetchpriority="high">
+<section class="hero" id="beranda" tabindex="-1">
+  <picture>
+    <source type="image/avif" sizes="100vw" srcset="assets/images/hero-640.avif 640w, assets/images/hero-960.avif 960w, assets/images/hero-1280.avif 1280w, assets/images/hero-1600.avif 1600w">
+    <source type="image/webp" sizes="100vw" srcset="assets/images/hero-640.webp 640w, assets/images/hero-960.webp 960w, assets/images/hero-1280.webp 1280w, assets/images/hero-1600.webp 1600w">
+    <img class="hero__bg" src="assets/images/hero.jpg" alt="Produser musik di studio rekaman dengan laptop menampilkan website company profile" width="1600" height="1028" fetchpriority="high">
+  </picture>
   <div class="container hero__inner">
     <div class="hero__text reveal">
       <span class="pill">Mitra Pertumbuhan Brand Bisnis Anda</span>
       <h1><i>Bisnis Anda Layak Bertumbuh.</i><br><i>Brand Anda</i> <span class="gold"><i>Layak Didengar.</i></span></h1>
       <p>Jangan biarkan bisnis Anda berjalan di tempat. Bangun citra profesional, tingkatkan kepercayaan pelanggan, dan ciptakan identitas brand yang lebih kuat bersama Brandvoice.id.</p>
       <div class="hero__actions">
-        <a href="#" class="btn btn--gold btn--lg js-wa" data-msg="Halo Brandvoice.id, saya ingin konsultasi gratis tentang brand bisnis saya.">
+        <a href="https://wa.me/6281390111550?text=Halo%20Brandvoice.id%2C%20saya%20ingin%20konsultasi%20gratis%20tentang%20brand%20bisnis%20saya." target="_blank" rel="noopener" class="btn btn--gold btn--lg js-wa" data-msg="Halo Brandvoice.id, saya ingin konsultasi gratis tentang brand bisnis saya.">
           <svg class="ico-wa" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-wa"/></svg>
           <span>Konsultasi Gratis<small>Diskusikan kebutuhan bisnis Anda</small></span>
         </a>
@@ -118,17 +145,17 @@
     </div>
     <div class="cards-3">
       <article class="card reveal">
-        <div class="card__icon"><svg viewBox="0 0 24 24"><path d="M3 10v4a1 1 0 0 0 1 1h2l5 4V5L6 9H4a1 1 0 0 0-1 1Zm13.5 2a4.5 4.5 0 0 0-2.5-4v8a4.5 4.5 0 0 0 2.5-4ZM14 3.2v2.1a7 7 0 0 1 0 13.4v2.1a9 9 0 0 0 0-17.6Z"/></svg></div>
+        <div class="card__icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 10v4a1 1 0 0 0 1 1h2l5 4V5L6 9H4a1 1 0 0 0-1 1Zm13.5 2a4.5 4.5 0 0 0-2.5-4v8a4.5 4.5 0 0 0 2.5-4ZM14 3.2v2.1a7 7 0 0 1 0 13.4v2.1a9 9 0 0 0 0-17.6Z"/></svg></div>
         <h3>Kurang Dikenal</h3>
         <p>Bisnis sulit menjangkau lebih banyak calon pelanggan karena belum memiliki identitas digital yang profesional.</p>
       </article>
       <article class="card reveal">
-        <div class="card__icon"><svg viewBox="0 0 24 24"><path d="M12 2 4 5v6c0 5 3.4 9.7 8 11 4.6-1.3 8-6 8-11V5l-8-3Zm-1.2 14.2-3.5-3.5 1.4-1.4 2.1 2.1 4.6-4.6 1.4 1.4-6 6Z"/></svg></div>
+        <div class="card__icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2 4 5v6c0 5 3.4 9.7 8 11 4.6-1.3 8-6 8-11V5l-8-3Zm-1.2 14.2-3.5-3.5 1.4-1.4 2.1 2.1 4.6-4.6 1.4 1.4-6 6Z"/></svg></div>
         <h3>Belum Dipercaya</h3>
         <p>Calon pelanggan masih ragu karena informasi bisnis sulit ditemukan dan tampil kurang meyakinkan.</p>
       </article>
       <article class="card reveal">
-        <div class="card__icon"><svg viewBox="0 0 24 24"><path d="M12 2a9 9 0 0 0-9 9v2h2v-2a7 7 0 0 1 14 0v3c0 2-1 4-2.5 5.5l1.4 1.4A9.8 9.8 0 0 0 21 14v-3a9 9 0 0 0-9-9Zm0 4a5 5 0 0 0-5 5v4h2v-4a3 3 0 0 1 6 0v3c0 2.6-1.3 5-3.4 6.4l1.1 1.7A9.6 9.6 0 0 0 17 14v-3a5 5 0 0 0-5-5Zm-1 5v4c0 1.8-.8 3.5-2.2 4.6l1.3 1.6A8 8 0 0 0 13 15v-4h-2Z"/></svg></div>
+        <div class="card__icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a9 9 0 0 0-9 9v2h2v-2a7 7 0 0 1 14 0v3c0 2-1 4-2.5 5.5l1.4 1.4A9.8 9.8 0 0 0 21 14v-3a9 9 0 0 0-9-9Zm0 4a5 5 0 0 0-5 5v4h2v-4a3 3 0 0 1 6 0v3c0 2.6-1.3 5-3.4 6.4l1.1 1.7A9.6 9.6 0 0 0 17 14v-3a5 5 0 0 0-5-5Zm-1 5v4c0 1.8-.8 3.5-2.2 4.6l1.3 1.6A8 8 0 0 0 13 15v-4h-2Z"/></svg></div>
         <h3>Sulit Diingat</h3>
         <p>Brand belum memiliki karakter yang kuat sehingga kurang menonjol di tengah persaingan.</p>
       </article>
@@ -137,7 +164,7 @@
 </section>
 
 <!-- ============ LAYANAN ============ -->
-<section class="section services dark" id="layanan">
+<section class="section services dark" id="layanan" tabindex="-1">
   <div class="container services__inner">
     <div class="section-head section-head--light reveal">
       <span class="eyebrow">+ Solusi Kami</span>
@@ -148,7 +175,7 @@
       <article class="service reveal">
         <img src="assets/images/layanan/website.jpg" alt="Website profesional untuk bisnis" loading="lazy" width="900" height="396">
         <div class="service__body">
-          <div class="service__ico"><svg viewBox="0 0 24 24"><path d="M3 4h18a1 1 0 0 1 1 1v11a1 1 0 0 1-1 1h-7v2h3v2H7v-2h3v-2H3a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1Zm1 2v9h16V6H4Z"/></svg></div>
+          <div class="service__ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 4h18a1 1 0 0 1 1 1v11a1 1 0 0 1-1 1h-7v2h3v2H7v-2h3v-2H3a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1Zm1 2v9h16V6H4Z"/></svg></div>
           <div>
             <h3>Website Profesional</h3>
             <p>Bangun kredibilitas bisnis dengan website profesional yang menampilkan profil, layanan, keunggulan, dan informasi perusahaan secara meyakinkan.</p>
@@ -163,7 +190,7 @@
       <article class="service reveal">
         <img src="assets/images/layanan/anthem.jpg" alt="Studio rekaman corporate anthem dan jingle" loading="lazy" width="996" height="396">
         <div class="service__body">
-          <div class="service__ico"><svg viewBox="0 0 24 24"><path d="M9 18V5l12-2v13a3 3 0 1 1-2-2.8V7.3L11 8.6V18a3 3 0 1 1-2-2.8Z"/></svg></div>
+          <div class="service__ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18V5l12-2v13a3 3 0 1 1-2-2.8V7.3L11 8.6V18a3 3 0 1 1-2-2.8Z"/></svg></div>
           <div>
             <h3>Corporate Anthem &amp; Jingle</h3>
             <p>Ciptakan lagu original yang merepresentasikan karakter, visi, misi, dan semangat perusahaan Anda.</p>
@@ -180,7 +207,7 @@
 </section>
 
 <!-- ============ KEUNGGULAN ============ -->
-<section class="section why" id="keunggulan">
+<section class="section why" id="keunggulan" tabindex="-1">
   <div class="container why__inner">
     <div class="section-head reveal">
       <span class="bar"></span>
@@ -188,22 +215,22 @@
     </div>
     <div class="why__grid">
       <div class="why__item reveal">
-        <svg viewBox="0 0 48 48"><path d="M14 6h20l10 12-20 24L4 18 14 6Zm-5 12h30M18 6l-4 12 10 24 10-24-4-12" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round"/></svg>
+        <svg viewBox="0 0 48 48" aria-hidden="true"><path d="M14 6h20l10 12-20 24L4 18 14 6Zm-5 12h30M18 6l-4 12 10 24 10-24-4-12" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round"/></svg>
         <h3>Citra Profesional</h3>
         <p>Meningkatkan citra dan kredibilitas perusahaan.</p>
       </div>
       <div class="why__item reveal">
-        <svg viewBox="0 0 48 48"><circle cx="22" cy="26" r="16" fill="none" stroke="currentColor" stroke-width="2.4"/><circle cx="22" cy="26" r="9" fill="none" stroke="currentColor" stroke-width="2.4"/><circle cx="22" cy="26" r="3" fill="currentColor"/><path d="m22 26 18-18m-6 0h6v6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg>
+        <svg viewBox="0 0 48 48" aria-hidden="true"><circle cx="22" cy="26" r="16" fill="none" stroke="currentColor" stroke-width="2.4"/><circle cx="22" cy="26" r="9" fill="none" stroke="currentColor" stroke-width="2.4"/><circle cx="22" cy="26" r="3" fill="currentColor"/><path d="m22 26 18-18m-6 0h6v6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg>
         <h3>Mudah Dikenal</h3>
         <p>Membuat brand memiliki identitas yang khas.</p>
       </div>
       <div class="why__item reveal">
-        <svg viewBox="0 0 48 48"><path d="M24 41S6 30 6 17a9 9 0 0 1 18-3 9 9 0 0 1 18 3c0 13-18 24-18 24Z" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round"/></svg>
+        <svg viewBox="0 0 48 48" aria-hidden="true"><path d="M24 41S6 30 6 17a9 9 0 0 1 18-3 9 9 0 0 1 18 3c0 13-18 24-18 24Z" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round"/></svg>
         <h3>Ikatan Emosional</h3>
         <p>Membangun kebanggaan dan kedekatan dengan pelanggan.</p>
       </div>
       <div class="why__item reveal">
-        <svg viewBox="0 0 48 48"><path d="M8 40V28h7v12M20 40V20h7v20M32 40V12h7v28M5 40h38M8 18 20 10l8 5 12-9m-6 0h6v6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"/></svg>
+        <svg viewBox="0 0 48 48" aria-hidden="true"><path d="M8 40V28h7v12M20 40V20h7v20M32 40V12h7v28M5 40h38M8 18 20 10l8 5 12-9m-6 0h6v6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"/></svg>
         <h3>Dukung Pertumbuhan Bisnis</h3>
         <p>Menjadi fondasi branding yang lebih kuat untuk mengembangkan bisnis.</p>
       </div>
@@ -217,10 +244,10 @@
     <div class="journey__box reveal">
       <h2>Dari Identitas Brand Menuju Pertumbuhan Bisnis.</h2>
       <ol class="journey__steps">
-        <li><span class="journey__ico"><svg viewBox="0 0 24 24"><path d="M12 5C6 5 2 12 2 12s4 7 10 7 10-7 10-7-4-7-10-7Zm0 11a4 4 0 1 1 0-8 4 4 0 0 1 0 8Zm0-6a2 2 0 1 0 0 4 2 2 0 0 0 0-4Z"/></svg></span><b>Lebih Terlihat</b><small>Bisnis Anda lebih mudah ditemukan dan dikenal.</small></li>
-        <li><span class="journey__ico"><svg viewBox="0 0 24 24"><path d="M12.2 6.5 9.6 9.1a1.5 1.5 0 0 0 2.1 2.1l2.1-2.1 4.7 4.7 2.5-2.5V5h-3l-1.5-1.5a2 2 0 0 0-2.8 0l-1.5 3ZM2 5v6.3l2 2 .8-.8a2 2 0 0 1 2.8 2.8l-.4.4a2 2 0 0 1 2.8 2.8l-.4.4a2 2 0 0 0 2.8 0l.4-.4a2 2 0 0 0 2.8 0l2.3-2.3-4.4-4.4-.7.7A3.5 3.5 0 0 1 8.2 7.7L10.9 5H2Z"/></svg></span><b>Lebih Dipercaya</b><small>Tampil lebih profesional dan meyakinkan.</small></li>
-        <li><span class="journey__ico"><svg viewBox="0 0 24 24"><path d="m12 2 3 6.3 6.9.9-5 4.8 1.2 6.8L12 17.6l-6.1 3.2L7.1 14l-5-4.8 6.9-.9L12 2Z"/></svg></span><b>Lebih Diingat</b><small>Memiliki identitas dan karakter yang khas.</small></li>
-        <li><span class="journey__ico"><svg viewBox="0 0 24 24"><path d="M3 20h18v2H3v-2Zm1-6h3v5H4v-5Zm5-4h3v9H9v-9Zm5 2h3v7h-3v-7Zm5-6h-3l1.2 1.2-4.2 4.2-3-3L4 13.6 5.4 15 11 9.4l3 3 5.6-5.6L21 8V6h-2Z"/></svg></span><b>Siap Bertumbuh</b><small>Memiliki modal branding untuk memperluas peluang bisnis.</small></li>
+        <li><span class="journey__ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5C6 5 2 12 2 12s4 7 10 7 10-7 10-7-4-7-10-7Zm0 11a4 4 0 1 1 0-8 4 4 0 0 1 0 8Zm0-6a2 2 0 1 0 0 4 2 2 0 0 0 0-4Z"/></svg></span><b>Lebih Terlihat</b><small>Bisnis Anda lebih mudah ditemukan dan dikenal.</small></li>
+        <li><span class="journey__ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12.2 6.5 9.6 9.1a1.5 1.5 0 0 0 2.1 2.1l2.1-2.1 4.7 4.7 2.5-2.5V5h-3l-1.5-1.5a2 2 0 0 0-2.8 0l-1.5 3ZM2 5v6.3l2 2 .8-.8a2 2 0 0 1 2.8 2.8l-.4.4a2 2 0 0 1 2.8 2.8l-.4.4a2 2 0 0 0 2.8 0l.4-.4a2 2 0 0 0 2.8 0l2.3-2.3-4.4-4.4-.7.7A3.5 3.5 0 0 1 8.2 7.7L10.9 5H2Z"/></svg></span><b>Lebih Dipercaya</b><small>Tampil lebih profesional dan meyakinkan.</small></li>
+        <li><span class="journey__ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 2 3 6.3 6.9.9-5 4.8 1.2 6.8L12 17.6l-6.1 3.2L7.1 14l-5-4.8 6.9-.9L12 2Z"/></svg></span><b>Lebih Diingat</b><small>Memiliki identitas dan karakter yang khas.</small></li>
+        <li><span class="journey__ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 20h18v2H3v-2Zm1-6h3v5H4v-5Zm5-4h3v9H9v-9Zm5 2h3v7h-3v-7Zm5-6h-3l1.2 1.2-4.2 4.2-3-3L4 13.6 5.4 15 11 9.4l3 3 5.6-5.6L21 8V6h-2Z"/></svg></span><b>Siap Bertumbuh</b><small>Memiliki modal branding untuk memperluas peluang bisnis.</small></li>
       </ol>
     </div>
   </div>
@@ -244,7 +271,7 @@
 </section>
 
 <!-- ============ PAKET ============ -->
-<section class="section pricing" id="paket">
+<section class="section pricing" id="paket" tabindex="-1">
   <div class="container pricing__inner">
     <div class="pricing__intro">
       <div class="section-head reveal">
@@ -284,7 +311,7 @@
               <li><b>Gratis Domain &amp; Hosting 1 Tahun</b><span>.com / .co.id + server cepat &amp; aman</span></li>
               <li><b>Support &amp; Panduan Teknis</b><span>Pendampingan hingga website online</span></li>
             </ul>
-            <a href="#" class="btn btn--primary btn--block js-wa" data-msg="Halo Brandvoice.id, saya tertarik dengan PAKET BRANDING (Rp4.500.000). Mohon info lebih lanjut.">Pilih Paket Branding <span aria-hidden="true">→</span></a>
+            <a href="https://wa.me/6281390111550?text=Halo%20Brandvoice.id%2C%20saya%20tertarik%20dengan%20PAKET%20BRANDING%20%28Rp4.500.000%29.%20Mohon%20info%20lebih%20lanjut." target="_blank" rel="noopener" class="btn btn--primary btn--block js-wa" data-msg="Halo Brandvoice.id, saya tertarik dengan PAKET BRANDING (Rp4.500.000). Mohon info lebih lanjut.">Pilih Paket Branding <span aria-hidden="true">→</span></a>
           </div>
         </article>
 
@@ -311,7 +338,7 @@
               <li><b>Bonus Marketing Kit Digital</b><span>Banner promosi, template konten media sosial &amp; materi iklan</span></li>
               <li><b>Prioritas Support &amp; Konsultasi Branding</b><span>Layanan lebih cepat &amp; pendampingan strategi digital</span></li>
             </ul>
-            <a href="#" class="btn btn--gold btn--block js-wa" data-msg="Halo Brandvoice.id, saya tertarik dengan PAKET PREMIUM (Rp8.500.000). Mohon info lebih lanjut.">Pilih Paket Premium <span aria-hidden="true">→</span></a>
+            <a href="https://wa.me/6281390111550?text=Halo%20Brandvoice.id%2C%20saya%20tertarik%20dengan%20PAKET%20PREMIUM%20%28Rp8.500.000%29.%20Mohon%20info%20lebih%20lanjut." target="_blank" rel="noopener" class="btn btn--gold btn--block js-wa" data-msg="Halo Brandvoice.id, saya tertarik dengan PAKET PREMIUM (Rp8.500.000). Mohon info lebih lanjut.">Pilih Paket Premium <span aria-hidden="true">→</span></a>
           </div>
         </article>
       </div>
@@ -331,8 +358,16 @@
 </section>
 
 <!-- ============ PORTOFOLIO ============ -->
-<!-- Daftar website klien diatur di assets/js/main.js (variabel websiteProjects) -->
-<section class="section portfolio dark" id="portofolio">
+<!-- CARA TAMBAH WEBSITE KLIEN BARU (di bagian "Website Klien yang Sudah Live" di bawah):
+     1. Screenshot halaman awal website (tanpa bar browser & taskbar, ukuran 1584x734), simpan sebagai .webp
+        di folder assets/images/portofolio/websites/
+     2. Salin satu baris <a class="site reveal" ...>...</a> di dalam <div class="sites">, lalu ganti
+        href, aria-label, title (deskripsi), src & alt gambar, jenis (site__type), dan nama (h3).
+        Angka "karya website" dihitung otomatis.
+     3. Kalau link belum ada, pakai bentuk ini (tampil sebagai "Segera Live" tanpa link):
+        <div class="site reveal soon" title="Deskripsi"><div class="site__shot"><img src="assets/images/portofolio/websites/ss-nama.webp" alt="Tampilan halaman awal website Nama" loading="lazy" decoding="async" width="1584" height="734"></div><span class="site__live">SOON</span><div class="site__body"><span class="site__type">Landing Page</span><h3>Nama</h3><span class="site__link">Segera Live</span></div></div>
+-->
+<section class="section portfolio dark" id="portofolio" tabindex="-1">
   <div class="container portfolio__inner">
     <div class="section-head section-head--light reveal">
       <span class="bar"></span>
@@ -343,25 +378,25 @@
       <article class="porto__card reveal">
         <img src="assets/images/portofolio/hotel.jpg" alt="Website company profile hotel dan resort" loading="lazy" width="900" height="435">
         <div class="porto__meta">
-          <span class="porto__ico"><svg viewBox="0 0 24 24"><path d="M2.5 19V6M2.5 15.5h19V19M21.5 15.5v-3a3 3 0 0 0-3-3H11v6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="6.7" cy="11.5" r="2" fill="none" stroke="currentColor" stroke-width="2"/></svg></span>
+          <span class="porto__ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2.5 19V6M2.5 15.5h19V19M21.5 15.5v-3a3 3 0 0 0-3-3H11v6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="6.7" cy="11.5" r="2" fill="none" stroke="currentColor" stroke-width="2"/></svg></span>
           <div class="porto__txt"><h3>Hotel &amp; Resort</h3><p>Company Profile Website &amp; Corporate Anthem</p></div>
-          <a class="porto__play" href="#contoh-lagu" aria-label="Dengarkan contoh lagu"><svg viewBox="0 0 24 24"><use href="#i-play"/></svg></a>
+          <a class="porto__play" href="#contoh-lagu" aria-label="Dengarkan contoh lagu"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-play"/></svg></a>
         </div>
       </article>
       <article class="porto__card reveal">
         <img src="assets/images/portofolio/rumah-sakit.jpg" alt="Website rumah sakit dan jingle layanan" loading="lazy" width="900" height="432">
         <div class="porto__meta">
-          <span class="porto__ico"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="4" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 7.5v9M7.5 12h9" stroke="currentColor" stroke-width="3"/></svg></span>
+          <span class="porto__ico"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="4" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 7.5v9M7.5 12h9" stroke="currentColor" stroke-width="3"/></svg></span>
           <div class="porto__txt"><h3>Kesehatan</h3><p>Website &amp; Jingle Layanan</p></div>
-          <a class="porto__play" href="#contoh-lagu" aria-label="Dengarkan contoh lagu"><svg viewBox="0 0 24 24"><use href="#i-play"/></svg></a>
+          <a class="porto__play" href="#contoh-lagu" aria-label="Dengarkan contoh lagu"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-play"/></svg></a>
         </div>
       </article>
       <article class="porto__card reveal">
         <img src="assets/images/portofolio/sekolah.jpg" alt="Website sekolah, corporate anthem, dan video lirik" loading="lazy" width="900" height="436">
         <div class="porto__meta">
-          <span class="porto__ico"><svg viewBox="0 0 24 24"><path d="M1.5 9 12 4l10.5 5L12 14z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M6 11.5V16c2 2 10 2 12 0v-4.5M22.5 9v6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span>
+          <span class="porto__ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M1.5 9 12 4l10.5 5L12 14z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M6 11.5V16c2 2 10 2 12 0v-4.5M22.5 9v6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span>
           <div class="porto__txt"><h3>Pendidikan</h3><p>Website, Corporate Anthem &amp; Video Lirik</p></div>
-          <a class="porto__play" href="#contoh-lagu" aria-label="Dengarkan contoh lagu"><svg viewBox="0 0 24 24"><use href="#i-play"/></svg></a>
+          <a class="porto__play" href="#contoh-lagu" aria-label="Dengarkan contoh lagu"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-play"/></svg></a>
         </div>
       </article>
     </div>
@@ -373,14 +408,28 @@
         <h3>Website Klien yang Sudah Live</h3>
         <p>Klik kartu untuk membuka website aslinya.</p>
       </div>
-      <div class="sites-count"><b id="sitesCount">0</b><span>karya<br>website</span></div>
+      <div class="sites-count"><b id="sitesCount">13</b><span>karya<br>website</span></div>
     </div>
-    <div class="sites" id="sites"></div>
+    <div class="sites" id="sites">
+      <a class="site reveal" href="https://quantumtelecom.id/" target="_blank" rel="noopener noreferrer" aria-label="Buka website Quantum Telecommunication (tab baru)" title="Website company profile untuk LPK Quantum Telecommunication Semarang."><div class="site__shot"><img src="assets/images/portofolio/websites/ss-quantum.webp" alt="Tampilan halaman awal website Quantum Telecommunication" loading="lazy" decoding="async" width="1584" height="734"></div><span class="site__live">LIVE</span><div class="site__body"><span class="site__type">Company Profile Website</span><h3>Quantum Telecommunication</h3><span class="site__link">Buka Website ↗</span></div></a>
+      <a class="site reveal" href="https://vbatponsel.com/" target="_blank" rel="noopener noreferrer" aria-label="Buka website Vbat Ponsel (tab baru)" title="Landing page untuk Vbat Ponsel."><div class="site__shot"><img src="assets/images/portofolio/websites/ss-vbatponsel.webp" alt="Tampilan halaman awal website Vbat Ponsel" loading="lazy" decoding="async" width="1584" height="734"></div><span class="site__live">LIVE</span><div class="site__body"><span class="site__type">Landing Page</span><h3>Vbat Ponsel</h3><span class="site__link">Buka Website ↗</span></div></a>
+      <a class="site reveal" href="https://sqverse.github.io/soppi/" target="_blank" rel="noopener noreferrer" aria-label="Buka website Soppi - Sop Iga Sapi (tab baru)" title="Landing page untuk rumah makan Soppi - Sop Iga Sapi."><div class="site__shot"><img src="assets/images/portofolio/websites/ss-soppi.webp" alt="Tampilan halaman awal website Soppi - Sop Iga Sapi" loading="lazy" decoding="async" width="1584" height="734"></div><span class="site__live">LIVE</span><div class="site__body"><span class="site__type">Landing Page</span><h3>Soppi - Sop Iga Sapi</h3><span class="site__link">Buka Website ↗</span></div></a>
+      <a class="site reveal" href="https://sqverse.github.io/kopi-gelas-tjilik/" target="_blank" rel="noopener noreferrer" aria-label="Buka website Kopi Gelas Tjilik (tab baru)" title="Landing page untuk Kopi Gelas Tjilik."><div class="site__shot"><img src="assets/images/portofolio/websites/ss-kgt.webp" alt="Tampilan halaman awal website Kopi Gelas Tjilik" loading="lazy" decoding="async" width="1584" height="734"></div><span class="site__live">LIVE</span><div class="site__body"><span class="site__type">Landing Page</span><h3>Kopi Gelas Tjilik</h3><span class="site__link">Buka Website ↗</span></div></a>
+      <a class="site reveal" href="https://sqverse.github.io/soto-angkring-mas-boed/" target="_blank" rel="noopener noreferrer" aria-label="Buka website Soto Angkring Mas Boed (tab baru)" title="Landing page untuk rumah makan Soto Angkring Mas Boed."><div class="site__shot"><img src="assets/images/portofolio/websites/ss-soto-angkring-mas-boed.webp" alt="Tampilan halaman awal website Soto Angkring Mas Boed" loading="lazy" decoding="async" width="1584" height="734"></div><span class="site__live">LIVE</span><div class="site__body"><span class="site__type">Landing Page</span><h3>Soto Angkring Mas Boed</h3><span class="site__link">Buka Website ↗</span></div></a>
+      <a class="site reveal" href="https://sqverse.github.io/kedai-pleburan/" target="_blank" rel="noopener noreferrer" aria-label="Buka website Kedai Pleburan (tab baru)" title="Landing page untuk Kedai Pleburan."><div class="site__shot"><img src="assets/images/portofolio/websites/ss-kedai-pleburan.webp" alt="Tampilan halaman awal website Kedai Pleburan" loading="lazy" decoding="async" width="1584" height="734"></div><span class="site__live">LIVE</span><div class="site__body"><span class="site__type">Landing Page</span><h3>Kedai Pleburan</h3><span class="site__link">Buka Website ↗</span></div></a>
+      <a class="site reveal" href="https://sqverse.github.io/keboen-buah/" target="_blank" rel="noopener noreferrer" aria-label="Buka website Keboen Buah (tab baru)" title="Landing page untuk Keboen Buah."><div class="site__shot"><img src="assets/images/portofolio/websites/ss-keboen-buah.webp" alt="Tampilan halaman awal website Keboen Buah" loading="lazy" decoding="async" width="1584" height="734"></div><span class="site__live">LIVE</span><div class="site__body"><span class="site__type">Landing Page</span><h3>Keboen Buah</h3><span class="site__link">Buka Website ↗</span></div></a>
+      <a class="site reveal" href="https://sqverse.github.io/burjo-bae/" target="_blank" rel="noopener noreferrer" aria-label="Buka website Burjo Bae (tab baru)" title="Landing page untuk Burjo Bae."><div class="site__shot"><img src="assets/images/portofolio/websites/ss-burjo-bae.webp" alt="Tampilan halaman awal website Burjo Bae" loading="lazy" decoding="async" width="1584" height="734"></div><span class="site__live">LIVE</span><div class="site__body"><span class="site__type">Landing Page</span><h3>Burjo Bae</h3><span class="site__link">Buka Website ↗</span></div></a>
+      <a class="site reveal" href="https://sqverse.github.io/olsen/" target="_blank" rel="noopener noreferrer" aria-label="Buka website Olsen (tab baru)" title="Landing page untuk Olsen."><div class="site__shot"><img src="assets/images/portofolio/websites/ss-olsen.webp" alt="Tampilan halaman awal website Olsen" loading="lazy" decoding="async" width="1584" height="734"></div><span class="site__live">LIVE</span><div class="site__body"><span class="site__type">Landing Page</span><h3>Olsen</h3><span class="site__link">Buka Website ↗</span></div></a>
+      <a class="site reveal" href="https://sqverse.github.io/tiyan-message/" target="_blank" rel="noopener noreferrer" aria-label="Buka website Tiyan Massage (tab baru)" title="Landing page untuk Tiyan Massage Semarang."><div class="site__shot"><img src="assets/images/portofolio/websites/ss-tiyan-massage.webp" alt="Tampilan halaman awal website Tiyan Massage" loading="lazy" decoding="async" width="1584" height="734"></div><span class="site__live">LIVE</span><div class="site__body"><span class="site__type">Landing Page</span><h3>Tiyan Massage</h3><span class="site__link">Buka Website ↗</span></div></a>
+      <a class="site reveal" href="https://sqverse.github.io/amaga-corp/" target="_blank" rel="noopener noreferrer" aria-label="Buka website Amaga Corp (tab baru)" title="Website company profile holding company Amaga Corp Semarang, lengkap dengan lagu perusahaan."><div class="site__shot"><img src="assets/images/portofolio/websites/ss-amaga-corp.webp" alt="Tampilan halaman awal website Amaga Corp" loading="lazy" decoding="async" width="1584" height="734"></div><span class="site__live">LIVE</span><div class="site__body"><span class="site__type">Company Profile &amp; Lagu Perusahaan</span><h3>Amaga Corp</h3><span class="site__link">Buka Website ↗</span></div></a>
+      <a class="site reveal" href="https://sqverse.github.io/waroeng-tjandi/" target="_blank" rel="noopener noreferrer" aria-label="Buka website Waroeng Tjandi (tab baru)" title="Landing page untuk restoran keluarga Waroeng Tjandi Ungaran, lengkap dengan lagu dan pemutar musik."><div class="site__shot"><img src="assets/images/portofolio/websites/ss-waroeng-tjandi.webp" alt="Tampilan halaman awal website Waroeng Tjandi" loading="lazy" decoding="async" width="1584" height="734"></div><span class="site__live">LIVE</span><div class="site__body"><span class="site__type">Landing Page &amp; Lagu</span><h3>Waroeng Tjandi</h3><span class="site__link">Buka Website ↗</span></div></a>
+      <a class="site reveal" href="https://sqverse.github.io/bebek-rakyat-ungaran/" target="_blank" rel="noopener noreferrer" aria-label="Buka website Bebek Rakyat Ungaran (tab baru)" title="Landing page untuk rumah makan Bebek Rakyat Ungaran, lengkap dengan lagu dan pemutar musik."><div class="site__shot"><img src="assets/images/portofolio/websites/ss-bebek-rakyat.webp" alt="Tampilan halaman awal website Bebek Rakyat Ungaran" loading="lazy" decoding="async" width="1584" height="734"></div><span class="site__live">LIVE</span><div class="site__body"><span class="site__type">Landing Page &amp; Lagu</span><h3>Bebek Rakyat Ungaran</h3><span class="site__link">Buka Website ↗</span></div></a>
+    </div>
   </div>
 </section>
 
 <!-- ============ CONTOH LAGU ============ -->
-<section class="section songs-sec" id="contoh-lagu">
+<section class="section songs-sec" id="contoh-lagu" tabindex="-1">
   <div class="container songs__inner">
     <div class="section-head reveal">
       <span class="bar"></span>
@@ -390,28 +439,28 @@
     <div class="songs">
       <article class="song reveal">
         <div class="song__top">
-          <div class="card__icon"><svg viewBox="0 0 24 24"><use href="#i-music"/></svg></div>
+          <div class="card__icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-music"/></svg></div>
           <div><h3>Saatnya Brand-Mu Bersuara</h3><p>Corporate Anthem · Pop Rock</p></div>
           <span class="eq" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
         </div>
         <div class="player">
-          <button class="p-btn" type="button" aria-label="Putar Saatnya Brand-Mu Bersuara"><svg viewBox="0 0 24 24"><use href="#i-play"/></svg></button>
+          <button class="p-btn" type="button" aria-label="Putar Saatnya Brand-Mu Bersuara"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-play"/></svg></button>
           <input class="p-seek" type="range" min="0" max="100" step="0.1" value="0" aria-label="Posisi lagu Saatnya Brand-Mu Bersuara">
-          <span class="p-time">0:00</span>
-          <audio preload="metadata" src="assets/audio/saatnya-brand-mu-bersuara.mp3"></audio>
+          <span class="p-time">5:03</span>
+          <audio preload="none" src="assets/audio/saatnya-brand-mu-bersuara.mp3"></audio>
         </div>
       </article>
       <article class="song reveal">
         <div class="song__top">
-          <div class="card__icon"><svg viewBox="0 0 24 24"><use href="#i-mic"/></svg></div>
+          <div class="card__icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-mic"/></svg></div>
           <div><h3>Brand Voice</h3><p>Jingle Perusahaan · Acoustic Bright</p></div>
           <span class="eq" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
         </div>
         <div class="player">
-          <button class="p-btn" type="button" aria-label="Putar Brand Voice"><svg viewBox="0 0 24 24"><use href="#i-play"/></svg></button>
+          <button class="p-btn" type="button" aria-label="Putar Brand Voice"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-play"/></svg></button>
           <input class="p-seek" type="range" min="0" max="100" step="0.1" value="0" aria-label="Posisi lagu Brand Voice">
-          <span class="p-time">0:00</span>
-          <audio preload="metadata" src="assets/audio/brand-voice.mp3"></audio>
+          <span class="p-time">3:36</span>
+          <audio preload="none" src="assets/audio/brand-voice.mp3"></audio>
         </div>
       </article>
     </div>
@@ -419,7 +468,7 @@
 </section>
 
 <!-- ============ TESTIMONI ============ -->
-<section class="section testi" id="testimoni">
+<section class="section testi" id="testimoni" tabindex="-1">
   <div class="container testi__inner">
     <div class="section-head reveal">
       <span class="bar"></span>
@@ -443,66 +492,66 @@
 </section>
 
 <!-- ============ FAQ ============ -->
-<section class="section faq" id="faq">
+<section class="section faq" id="faq" tabindex="-1">
   <div class="container faq__inner">
     <div class="section-head reveal">
       <span class="bar"></span>
       <h2>Pertanyaan yang Sering Diajukan</h2>
       <p>Belum menemukan jawabannya? Tanyakan langsung lewat WhatsApp, gratis.</p>
-      <a href="#" class="btn btn--gold js-wa" data-msg="Halo Brandvoice.id, saya ingin bertanya.">
+      <a href="https://wa.me/6281390111550?text=Halo%20Brandvoice.id%2C%20saya%20ingin%20bertanya." target="_blank" rel="noopener" class="btn btn--gold js-wa" data-msg="Halo Brandvoice.id, saya ingin bertanya.">
         <svg class="ico-wa" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-wa"/></svg> Tanya via WhatsApp
       </a>
     </div>
     <div class="accordion">
-      <details class="reveal" open>
+      <details class="reveal" name="faq" open>
         <summary>Apa itu corporate anthem, dan kenapa brand saya membutuhkannya?</summary>
         <p>Corporate anthem adalah lagu orisinal yang diciptakan khusus untuk organisasi Anda, berisi visi, misi, nilai, dan semangat perusahaan. Lagu ini bisa dipakai di acara internal, apel pagi, video profil, nada tunggu telepon, hingga konten media sosial, sehingga karyawan dan pelanggan lebih mudah mengingat dan merasa bangga pada brand Anda.</p>
       </details>
-      <details class="reveal">
+      <details class="reveal" name="faq">
         <summary>Apa bedanya corporate anthem, mars, dan jingle?</summary>
         <p>Corporate anthem atau mars adalah lagu utuh (umumnya 2–4 menit) yang mewakili identitas dan nilai organisasi. Jingle adalah versi pendek (sekitar 15–60 detik) yang dibuat untuk keperluan promosi dan iklan. Pada paket Premium, Anda mendapatkan keduanya.</p>
       </details>
-      <details class="reveal">
+      <details class="reveal" name="faq">
         <summary>Apakah lagunya benar-benar original?</summary>
         <p>Ya. Setiap lagu diciptakan khusus untuk perusahaan Anda — lirik, melodi, dan aransemen dibuat baru, bukan dari template atau lagu yang sudah ada.</p>
       </details>
-      <details class="reveal">
+      <details class="reveal" name="faq">
         <summary>Berapa lama proses pengerjaannya?</summary>
         <p>Website company profile umumnya selesai dalam 7–14 hari kerja, dan corporate anthem dalam 14–21 hari kerja, dihitung sejak materi dan brief dari Anda lengkap. Jadwal pasti akan kami sampaikan saat konsultasi.</p>
       </details>
-      <details class="reveal">
+      <details class="reveal" name="faq">
         <summary>Siapa yang menulis liriknya? Bolehkah kami memakai lirik sendiri?</summary>
         <p>Tim kami menyusun lirik berdasarkan visi, misi, nilai, dan karakter brand yang Anda sampaikan saat konsultasi. Jika Anda sudah punya lirik atau slogan sendiri, kami bisa memakainya dan menyesuaikannya agar enak dinyanyikan. Lirik selalu kami mintakan persetujuan Anda sebelum masuk studio.</p>
       </details>
-      <details class="reveal">
+      <details class="reveal" name="faq">
         <summary>Apakah kami bisa memilih genre musik dan karakter vokalnya?</summary>
         <p>Bisa. Genre (pop, orkestra, mars, akustik, religi, dan lainnya), tempo, serta karakter vokal pria, wanita, atau paduan suara kami sesuaikan dengan karakter brand dan audiens Anda. Anda juga bisa memberi lagu referensi sebagai acuan nuansa.</p>
       </details>
-      <details class="reveal">
+      <details class="reveal" name="faq">
         <summary>Apakah ada revisi?</summary>
         <p>Ada. Revisi dilakukan pada tahap yang tepat: desain website, lirik, dan demo lagu, sebelum masuk produksi akhir. Jumlah dan cakupan revisi tercantum jelas dalam penawaran setiap paket.</p>
       </details>
-      <details class="reveal">
+      <details class="reveal" name="faq">
         <summary>Siapa pemilik hak atas lagu dan website yang sudah jadi?</summary>
         <p>Setelah pelunasan, lagu dan website sepenuhnya dapat Anda gunakan untuk seluruh keperluan organisasi: acara, iklan, media sosial, dan video. Ketentuan hak penggunaan dituangkan secara tertulis dalam perjanjian kerja sama.</p>
       </details>
-      <details class="reveal">
+      <details class="reveal" name="faq">
         <summary>File apa saja yang kami terima saat serah terima?</summary>
         <p>Untuk lagu: file master (WAV dan MP3), versi minus one/instrumental, dan teks lirik. Untuk website: website yang sudah online di domain Anda beserta akses pengelolaannya. Paket Premium ditambah file jingle dan video lirik HD.</p>
       </details>
-      <details class="reveal">
+      <details class="reveal" name="faq">
         <summary>Apakah harga sudah termasuk domain dan hosting?</summary>
         <p>Domain dan hosting gratis untuk tahun pertama. Tahun berikutnya cukup diperpanjang dengan biaya tahunan yang akan kami informasikan sebelum jatuh tempo, sehingga website Anda tetap online tanpa terputus.</p>
       </details>
-      <details class="reveal">
+      <details class="reveal" name="faq">
         <summary>Bisakah memesan corporate anthem saja, tanpa website?</summary>
         <p>Bisa. Jika organisasi Anda sudah memiliki website, kami menyediakan penawaran khusus untuk corporate anthem, jingle, atau video lirik saja. Silakan hubungi kami untuk konsultasi.</p>
       </details>
-      <details class="reveal">
+      <details class="reveal" name="faq">
         <summary>Bagaimana sistem pembayarannya?</summary>
         <p>Pembayaran dilakukan bertahap: uang muka saat proyek dimulai dan pelunasan saat serah terima. Kami menyediakan invoice dan dokumen penawaran resmi untuk kebutuhan administrasi instansi maupun perusahaan.</p>
       </details>
-      <details class="reveal">
+      <details class="reveal" name="faq">
         <summary>Kami berada di luar kota. Apakah tetap bisa dilayani?</summary>
         <p>Bisa. Konsultasi, persetujuan lirik, dan review demo dapat dilakukan sepenuhnya secara online melalui WhatsApp dan video call, sehingga kami dapat melayani klien di seluruh Indonesia.</p>
       </details>
@@ -522,16 +571,16 @@
     <form class="form reveal" id="leadForm" novalidate>
       <h3>Konsultasi Brand Gratis</h3>
       <p class="form__sub">Isi data singkat, kami lanjutkan diskusi via WhatsApp.</p>
-      <label>Nama Anda<input type="text" name="nama" required placeholder="cth. Budi Santoso"></label>
-      <label>Nama Bisnis / Perusahaan<input type="text" name="bisnis" required placeholder="cth. CV Maju Jaya"></label>
+      <label>Nama Anda<input type="text" name="nama" required autocomplete="name" aria-describedby="formError" placeholder="cth. Budi Santoso"></label>
+      <label>Nama Bisnis / Perusahaan<input type="text" name="bisnis" required autocomplete="organization" aria-describedby="formError" placeholder="cth. CV Maju Jaya"></label>
       <label>Paket yang Diminati
-        <select name="paket">
+        <select name="paket" autocomplete="off">
           <option>Belum tahu, ingin konsultasi dulu</option>
           <option>Paket Branding — Rp4.500.000</option>
           <option>Paket Premium — Rp8.500.000</option>
         </select>
       </label>
-      <label>Pesan (opsional)<textarea name="pesan" rows="3" placeholder="Ceritakan singkat kebutuhan bisnis Anda"></textarea></label>
+      <label>Pesan (opsional)<textarea name="pesan" rows="3" autocomplete="off" placeholder="Ceritakan singkat kebutuhan bisnis Anda"></textarea></label>
       <button type="submit" class="btn btn--gold btn--block btn--lg">
         <svg class="ico-wa" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-wa"/></svg> Kirim via WhatsApp
       </button>
@@ -549,15 +598,15 @@
       <span class="logo__text"><b>BRANDVOICE<em>.ID</em></b><small>Solusi Identitas &amp; Pertumbuhan Bisnis</small></span>
     </a>
     <ul class="footer__svc">
-      <li><svg viewBox="0 0 24 24"><path d="M3 4h18a1 1 0 0 1 1 1v11a1 1 0 0 1-1 1h-7v2h3v2H7v-2h3v-2H3a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1Zm1 2v9h16V6H4Z"/></svg>Website Profesional</li>
-      <li><svg viewBox="0 0 24 24"><path d="M9 18V5l12-2v13a3 3 0 1 1-2-2.8V7.3L11 8.6V18a3 3 0 1 1-2-2.8Z"/></svg>Corporate Anthem</li>
-      <li><svg viewBox="0 0 24 24"><path d="M12 14a3 3 0 0 0 3-3V5a3 3 0 0 0-6 0v6a3 3 0 0 0 3 3Zm5-3a5 5 0 0 1-10 0H5a7 7 0 0 0 6 6.9V21h2v-3.1A7 7 0 0 0 19 11h-2Z"/></svg>Jingle Perusahaan</li>
-      <li><svg viewBox="0 0 24 24"><path d="m12 2 10 5-10 5L2 7l10-5Zm-8.2 9L12 15l8.2-4 1.8.9-10 5-10-5 1.8-.9Zm0 4L12 19l8.2-4 1.8.9-10 5-10-5 1.8-.9Z"/></svg>Branding Digital</li>
+      <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 4h18a1 1 0 0 1 1 1v11a1 1 0 0 1-1 1h-7v2h3v2H7v-2h3v-2H3a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1Zm1 2v9h16V6H4Z"/></svg>Website Profesional</li>
+      <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18V5l12-2v13a3 3 0 1 1-2-2.8V7.3L11 8.6V18a3 3 0 1 1-2-2.8Z"/></svg>Corporate Anthem</li>
+      <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 14a3 3 0 0 0 3-3V5a3 3 0 0 0-6 0v6a3 3 0 0 0 3 3Zm5-3a5 5 0 0 1-10 0H5a7 7 0 0 0 6 6.9V21h2v-3.1A7 7 0 0 0 19 11h-2Z"/></svg>Jingle Perusahaan</li>
+      <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 2 10 5-10 5L2 7l10-5Zm-8.2 9L12 15l8.2-4 1.8.9-10 5-10-5 1.8-.9Zm0 4L12 19l8.2-4 1.8.9-10 5-10-5 1.8-.9Z"/></svg>Branding Digital</li>
     </ul>
   </div>
   <div class="container footer__bottom">
     <p>© <span id="year">2026</span> Brandvoice.id. Semua hak dilindungi.</p>
-    <p>Semarang, Jawa Tengah · <a href="#" class="js-wa" data-msg="Halo Brandvoice.id, saya ingin bertanya.">WhatsApp <span data-wa-text></span></a> · <a href="mailto:halo@brandvoice.id">halo@brandvoice.id</a></p>
+    <p>Semarang, Jawa Tengah · <a href="https://wa.me/6281390111550?text=Halo%20Brandvoice.id%2C%20saya%20ingin%20bertanya." target="_blank" rel="noopener" class="js-wa" data-msg="Halo Brandvoice.id, saya ingin bertanya.">WhatsApp <span data-wa-text></span></a> · <a href="mailto:halo@brandvoice.id">halo@brandvoice.id</a></p>
   </div>
 </footer>
 
@@ -566,11 +615,11 @@
   <svg class="vol-on" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-vol-on"/></svg>
   <svg class="vol-off" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-vol-off"/></svg>
 </button>
-<a href="#" class="wa-float js-wa" data-msg="Halo Brandvoice.id, saya ingin konsultasi gratis." aria-label="Chat WhatsApp">
+<a href="https://wa.me/6281390111550?text=Halo%20Brandvoice.id%2C%20saya%20ingin%20konsultasi%20gratis." target="_blank" rel="noopener" class="wa-float js-wa" data-msg="Halo Brandvoice.id, saya ingin konsultasi gratis." aria-label="Chat WhatsApp">
   <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-wa"/></svg>
 </a>
 <a href="#beranda" class="to-top" id="toTop" aria-label="Kembali ke atas">↑</a>
 
-<script src="assets/js/main.js?v=20261123c"></script>
+<script src="assets/js/main.js?v=20261128"></script>
 </body>
 </html>

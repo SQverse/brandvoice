@@ -1,30 +1,12 @@
 /* BrandVoice.id — script halaman */
 /* ====== PENGATURAN — GANTI DI SINI ====== */
-var WA_NUMBER  = "6281390111550";   // nomor WhatsApp, format 62xxxxxxxxxx (tanpa + dan tanpa 0 di depan)
+var WA_NUMBER  = "6281390111550";   // nomor WhatsApp, format 62xxxxxxxxxx (tanpa + dan tanpa 0 di depan). Link di index.html ikut diperbarui otomatis oleh script ini
 var WA_DISPLAY = "0813-9011-1550"; // nomor yang tampil di footer
 var BG_VOLUME  = 0.4;             // volume musik latar (0 - 1)
 /* ======================================== */
 
-// ---------- Portofolio website klien ----------
-// CARA TAMBAH WEBSITE BARU:
-// 1. Screenshot halaman awal website (tanpa bar browser & taskbar, ukuran 1584x734), simpan ke folder assets/images/portofolio/websites/
-// 2. Salin satu baris di bawah, lalu ganti name, type, description, url, dan preview.
-//    Kalau link belum ada, isi url:'' -> kartu tampil sebagai "Segera Live" tanpa link.
-var websiteProjects = [
-  { name:'Quantum Telecommunication', type:'Company Profile Website', description:'Website company profile untuk LPK Quantum Telecommunication Semarang.', url:'https://quantumtelecom.id/', preview:'assets/images/portofolio/websites/ss-quantum.webp' },
-  { name:'Vbat Ponsel', type:'Landing Page', description:'Landing page untuk Vbat Ponsel.', url:'https://vbatponsel.com/', preview:'assets/images/portofolio/websites/ss-vbatponsel.webp' },
-  { name:'Soppi - Sop Iga Sapi', type:'Landing Page', description:'Landing page untuk rumah makan Soppi - Sop Iga Sapi.', url:'https://sqverse.github.io/soppi/', preview:'assets/images/portofolio/websites/ss-soppi.webp' },
-  { name:'Kopi Gelas Tjilik', type:'Landing Page', description:'Landing page untuk Kopi Gelas Tjilik.', url:'https://sqverse.github.io/kopi-gelas-tjilik/', preview:'assets/images/portofolio/websites/ss-kgt.webp' },
-  { name:'Soto Angkring Mas Boed', type:'Landing Page', description:'Landing page untuk rumah makan Soto Angkring Mas Boed.', url:'https://sqverse.github.io/soto-angkring-mas-boed/', preview:'assets/images/portofolio/websites/ss-soto-angkring-mas-boed.webp' },
-  { name:'Kedai Pleburan', type:'Landing Page', description:'Landing page untuk Kedai Pleburan.', url:'https://sqverse.github.io/kedai-pleburan/', preview:'assets/images/portofolio/websites/ss-kedai-pleburan.webp' },
-  { name:'Keboen Buah', type:'Landing Page', description:'Landing page untuk Keboen Buah.', url:'https://sqverse.github.io/keboen-buah/', preview:'assets/images/portofolio/websites/ss-keboen-buah.webp' },
-  { name:'Burjo Bae', type:'Landing Page', description:'Landing page untuk Burjo Bae.', url:'https://sqverse.github.io/burjo-bae/', preview:'assets/images/portofolio/websites/ss-burjo-bae.webp' },
-  { name:'Olsen', type:'Landing Page', description:'Landing page untuk Olsen.', url:'https://sqverse.github.io/olsen/', preview:'assets/images/portofolio/websites/ss-olsen.webp' },
-  { name:'Tiyan Massage', type:'Landing Page', description:'Landing page untuk Tiyan Massage Semarang.', url:'https://sqverse.github.io/tiyan-message/', preview:'assets/images/portofolio/websites/ss-tiyan-massage.webp' },
-  { name:'Amaga Corp', type:'Company Profile & Lagu Perusahaan', description:'Website company profile holding company Amaga Corp Semarang, lengkap dengan lagu perusahaan.', url:'https://sqverse.github.io/amaga-corp/', preview:'assets/images/portofolio/websites/ss-amaga-corp.webp' },
-  { name:'Waroeng Tjandi', type:'Landing Page & Lagu', description:'Landing page untuk restoran keluarga Waroeng Tjandi Ungaran, lengkap dengan lagu dan pemutar musik.', url:'https://sqverse.github.io/waroeng-tjandi/', preview:'assets/images/portofolio/websites/ss-waroeng-tjandi.webp' },
-  { name:'Bebek Rakyat Ungaran', type:'Landing Page & Lagu', description:'Landing page untuk rumah makan Bebek Rakyat Ungaran, lengkap dengan lagu dan pemutar musik.', url:'https://sqverse.github.io/bebek-rakyat-ungaran/', preview:'assets/images/portofolio/websites/ss-bebek-rakyat.webp' }
-];
+// Daftar website klien sekarang ditulis langsung di index.html (bagian #portofolio),
+// supaya terbaca Google tanpa menunggu JavaScript. Petunjuk menambah klien ada di sana.
 
 (function () {
   "use strict";
@@ -49,29 +31,19 @@ var websiteProjects = [
   document.querySelectorAll("[data-wa-text]").forEach(function (e) { e.textContent = WA_DISPLAY; });
 
   // ---------- Portofolio website klien ----------
-  var grid = document.getElementById("sites");
-  websiteProjects.forEach(function (p) {
-    var card = el(p.url ? "a" : "div", "site reveal" + (p.url ? "" : " soon"));
-    if (p.url) {
-      card.href = p.url; card.target = "_blank"; card.rel = "noopener noreferrer";
-      card.setAttribute("aria-label", "Buka website " + p.name + " (tab baru)");
+  var sites = document.querySelectorAll("#sites .site");
+  sites.forEach(function (card) {
+    var img = card.querySelector(".site__shot img");
+    if (!img) return;
+    function fallback() {
+      var shot = img.parentNode;
+      img.remove();
+      shot.append(el("div", "site__fallback", card.querySelector("h3").textContent));
     }
-    card.title = p.description;
-
-    var shot = el("div", "site__shot");
-    var img = el("img");
-    img.src = p.preview; img.alt = "Tampilan halaman awal website " + p.name;
-    img.loading = "lazy"; img.decoding = "async"; img.width = 1584; img.height = 734;
-    img.addEventListener("error", function () { img.remove(); shot.append(el("div", "site__fallback", p.name)); }, { once: true });
-    shot.append(img);
-
-    var body = el("div", "site__body");
-    body.append(el("span", "site__type", p.type), el("h3", "", p.name), el("span", "site__link", p.url ? "Buka Website ↗" : "Segera Live"));
-
-    card.append(shot, el("span", "site__live", p.url ? "LIVE" : "SOON"), body);
-    grid.append(card);
+    if (img.complete && img.naturalWidth === 0) fallback();
+    else img.addEventListener("error", fallback, { once: true });
   });
-  document.getElementById("sitesCount").textContent = websiteProjects.length;
+  document.getElementById("sitesCount").textContent = sites.length;
 
   // Header saat scroll + tombol ke atas
   var header = document.getElementById("header");
@@ -99,19 +71,39 @@ var websiteProjects = [
   });
   document.addEventListener("keydown", function (e) { if (e.key === "Escape") setMenu(false); });
 
-  // Menu aktif sesuai section + animasi muncul
+  // Menu aktif sesuai section.
+  // Browser modern (Chrome/Edge 140+) menandai link aktif sendiri lewat CSS
+  // (scroll-target-group + :target-current); di sini cukup menyalin statusnya ke aria-current.
+  // Browser lain memakai IntersectionObserver sebagai cadangan.
   var links = Array.prototype.slice.call(nav.querySelectorAll('a[href^="#"]:not(.btn)'));
-  var sections = links.map(function (l) { return document.querySelector(l.getAttribute("href")); }).filter(Boolean);
-  if ("IntersectionObserver" in window) {
+  function markCurrent(current) {
+    links.forEach(function (l) {
+      var on = l === current;
+      l.classList.toggle("active", on);
+      if (on) l.setAttribute("aria-current", "true"); else l.removeAttribute("aria-current");
+    });
+  }
+  if (CSS.supports("scroll-target-group: auto")) {
+    var syncCurrent = function () { markCurrent(nav.querySelector("a:target-current")); };
+    syncCurrent();
+    document.addEventListener("scrollend", syncCurrent);
+  } else if ("IntersectionObserver" in window) {
+    var sections = links.map(function (l) { return document.querySelector(l.getAttribute("href")); }).filter(Boolean);
     var spy = new IntersectionObserver(function (entries) {
       entries.forEach(function (e) {
         if (e.isIntersecting) {
-          links.forEach(function (l) { l.classList.toggle("active", l.getAttribute("href") === "#" + e.target.id); });
+          markCurrent(links.filter(function (l) { return l.getAttribute("href") === "#" + e.target.id; })[0]);
         }
       });
     }, { rootMargin: "-45% 0px -50% 0px" });
     sections.forEach(function (s) { spy.observe(s); });
+  }
 
+  // Animasi muncul saat di-scroll.
+  // Browser yang mendukung scroll-driven animation menjalankannya murni lewat CSS (lihat style.css);
+  // IntersectionObserver di bawah hanya cadangan untuk browser lama.
+  var cssReveal = CSS.supports("(animation-timeline: view()) and (animation-range: entry)");
+  if (!cssReveal && "IntersectionObserver" in window) {
     var rev = new IntersectionObserver(function (entries) {
       entries.forEach(function (e) {
         if (e.isIntersecting) { e.target.classList.add("in"); rev.unobserve(e.target); }
@@ -121,17 +113,11 @@ var websiteProjects = [
       r.style.transitionDelay = (i % 4) * 80 + "ms";
       rev.observe(r);
     });
-  } else {
+  } else if (!cssReveal) {
     document.querySelectorAll(".reveal").forEach(function (r) { r.classList.add("in"); });
   }
 
-  // FAQ: hanya satu terbuka
-  var details = document.querySelectorAll(".accordion details");
-  details.forEach(function (d) {
-    d.addEventListener("toggle", function () {
-      if (d.open) details.forEach(function (o) { if (o !== d) o.open = false; });
-    });
-  });
+  // FAQ: "hanya satu terbuka" kini ditangani HTML sendiri (<details name="faq">).
 
   // Form -> WhatsApp
   var form = document.getElementById("leadForm");
@@ -143,9 +129,14 @@ var websiteProjects = [
       var f = form.elements[n];
       var bad = !f.value.trim();
       f.classList.toggle("invalid", bad);
+      if (bad) f.setAttribute("aria-invalid", "true"); else f.removeAttribute("aria-invalid");
       if (bad) ok = false;
     });
-    if (!ok) { err.textContent = "Mohon isi nama dan nama bisnis Anda."; return; }
+    if (!ok) {
+      err.textContent = "Mohon isi nama dan nama bisnis Anda.";
+      form.querySelector("[aria-invalid]").focus();
+      return;
+    }
     err.textContent = "";
     var msg =
       "Halo Brandvoice.id, saya ingin konsultasi brand gratis.\n\n" +
@@ -161,7 +152,6 @@ var websiteProjects = [
   // ---------- Audio ----------
   var bgAudio = document.getElementById("bg-audio");
   var audioCtrl = document.getElementById("audio-ctrl");
-  var bgUserOff = false; // true jika pengunjung sengaja mematikan musik latar
   bgAudio.volume = BG_VOLUME;
 
   // Hanya satu audio yang boleh berbunyi dalam satu waktu
@@ -234,18 +224,9 @@ var websiteProjects = [
   bgAudio.addEventListener("pause", updateBgUI);
 
   audioCtrl.addEventListener("click", function () {
-    if (bgAudio.paused) { bgUserOff = false; bgAudio.play().catch(function () {}); }
-    else { bgUserOff = true; bgAudio.pause(); }
+    if (bgAudio.paused) bgAudio.play().catch(function () {});
+    else bgAudio.pause();
   });
 
-  // Browser memblokir autoplay bersuara, jadi musik latar dimulai pada interaksi pertama pengunjung.
-  // File musik (±5 MB) baru diunduh saat itu, supaya halaman tetap cepat terbuka.
-  var unlockEvents = ["pointerdown", "keydown", "touchstart"];
-  function startOnInteract(e) {
-    unlockEvents.forEach(function (ev) { document.removeEventListener(ev, startOnInteract, true); });
-    if (bgUserOff || e.target.closest("#audio-ctrl, .song")) return;
-    var songPlaying = Array.prototype.some.call(document.querySelectorAll(".song audio"), function (a) { return !a.paused; });
-    if (!songPlaying) bgAudio.play().catch(function () {});
-  }
-  unlockEvents.forEach(function (ev) { document.addEventListener(ev, startOnInteract, true); });
+  // Musik latar hanya diputar saat pengunjung menekan tombol musik (file ±3,5 MB baru diunduh saat itu).
 })();
